@@ -1,0 +1,19 @@
+# Local full stack: Postgres + backend (frontend runs with `npm run dev` in its own repo)
+services:
+  db:
+    image: postgres:16
+    environment: { POSTGRES_USER: fecr, POSTGRES_PASSWORD: fecr, POSTGRES_DB: fecr }
+    ports: ["5432:5432"]
+    volumes: [pgdata:/var/lib/postgresql/data]
+  api:
+    build: .
+    environment:
+      APP_ENV: development
+      DATABASE_URL: postgresql://fecr:fecr@db:5432/fecr
+      SECRET_KEY: local-dev-secret-change-me
+      ALLOWED_ORIGINS: http://localhost:5173,http://localhost:4173
+      MODEL_DIR: /srv/model_store
+    ports: ["8000:8000"]
+    depends_on: [db]
+volumes:
+  pgdata: {}

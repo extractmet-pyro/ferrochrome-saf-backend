@@ -1,0 +1,192 @@
+category,name,symbol,description,units,lo,hi,nominal_or_mw,provenance,uncertainty_or_notes,source
+plant_parameter,furnace_id,-,Furnace identifier,-,0,0,Industry-X FCF-1,DEMO-ONLY,+/-20 % (example prior),config
+plant_parameter,site_timezone,-,"Site timezone (UTC stored, local displayed)",-,0,0,Asia/Kolkata,DEMO-ONLY,+/-20 % (example prior),config
+plant_parameter,furnace_type,-,Electrical configuration,-,0,0,AC-3-electrode-SAF,DEMO-ONLY,+/-20 % (example prior),config
+plant_parameter,enclosure,-,Roof enclosure: open | semi-closed | closed,-,0,0,closed,DEMO-ONLY,+/-20 % (example prior),config
+plant_parameter,transformer_mva,S_T,Furnace transformer rating,MVA,3,120,45.0,DEMO-ONLY,+/-20 % (example prior),config
+plant_parameter,nominal_power_mw,P_nom,Nominal active furnace power,MW,2,100,36.0,DEMO-ONLY,+/-20 % (example prior),config
+plant_parameter,nominal_line_voltage_v,V_LL,Nominal secondary line voltage,V,60,600,224.5,DEMO-ONLY,+/-20 % (example prior),config
+plant_parameter,tap_count,N_tap,Number of on-load tap positions,-,3,40,19,DEMO-ONLY,+/-20 % (example prior),config
+plant_parameter,tap_step_v,dV_tap,Line-voltage step per tap,V,0.5,20,4.94,DEMO-ONLY,+/-20 % (example prior),config
+plant_parameter,tap_min_v,"V_tap,min",Line voltage at tap 1,V,40,500,175.1,DEMO-ONLY,+/-20 % (example prior),config
+plant_parameter,tap_min_dwell_s,t_dwell,Minimum dwell between tap changes,s,30,3600,300,DEMO-ONLY,+/-20 % (example prior),config
+plant_parameter,max_phase_current_ka,I_max,Electrode current limit (current-density based),kA,10,250,122.6,DEMO-ONLY,+/-20 % (example prior),config
+plant_parameter,power_factor_design,PF_d,Design power factor at nominal load,-,0.5,0.98,0.82,DEMO-ONLY,+/-20 % (example prior),config
+plant_parameter,short_network_resistance_mohm,R_net,Busbar/flexible/electrode-column resistance per phase,mOhm,0.01,0.5,0.06,DEMO-ONLY,+/-20 % (example prior),config
+plant_parameter,electrode_diameter_m,D_e,Soderberg electrode diameter,m,0.5,2.2,1.55,DEMO-ONLY,+/-20 % (example prior),config
+plant_parameter,pitch_circle_diameter_m,PCD,Electrode pitch-circle diameter,m,1,7,4.03,DEMO-ONLY,+/-20 % (example prior),config
+plant_parameter,electrode_tip_depth_nominal_m,h_tip,Nominal tip depth below burden surface,m,0.3,4.0,2.81,DEMO-ONLY,+/-20 % (example prior),config
+plant_parameter,electrode_tip_depth_min_m,"h_tip,min",Minimum allowed tip depth (immersion),m,0.1,3.0,1.53,DEMO-ONLY,+/-20 % (example prior),config
+plant_parameter,electrode_tip_depth_max_m,"h_tip,max",Maximum tip depth (hearth clearance),m,0.5,5.0,4.08,DEMO-ONLY,+/-20 % (example prior),config
+plant_parameter,electrode_max_speed_m_per_min,v_e,Electrode hoist max speed,m/min,0.05,2.0,0.4,DEMO-ONLY,+/-20 % (example prior),config
+plant_parameter,electrode_paste_kg_per_mwh,e_paste,Electrode paste consumption,kg/MWh,1,10,3.0,CALIBRATION-REQUIRED,+/-20 % (example prior),config
+plant_parameter,slip_length_mm,l_slip,Electrode slip length per event,mm,5,40,15,DEMO-ONLY,+/-20 % (example prior),config
+plant_parameter,hearth_inner_diameter_m,D_h,Hearth inner diameter,m,3,20,10.44,DEMO-ONLY,+/-20 % (example prior),config
+plant_parameter,burden_height_m,H_b,Burden column height above slag,m,1.5,9,5.1,DEMO-ONLY,+/-20 % (example prior),config
+plant_parameter,metal_bath_design_depth_m,H_m,Metal bath design depth (after tap heel),m,0.2,1.5,0.6,DEMO-ONLY,+/-20 % (example prior),config
+plant_parameter,slag_layer_design_depth_m,H_s,Slag layer design depth,m,0.3,2.0,0.9,DEMO-ONLY,+/-20 % (example prior),config
+plant_parameter,freeboard_height_m,H_fb,Freeboard height under roof,m,0.5,4,1.6,DEMO-ONLY,+/-20 % (example prior),config
+plant_parameter,ambient_temperature_k,T_amb,Ambient air temperature,K,263,323,303.15,DEMO-ONLY,+/-20 % (example prior),config
+plant_parameter,shell_emissivity,eps_sh,Shell surface emissivity,-,0.3,0.95,0.8,DEMO-ONLY,+/-20 % (example prior),config
+plant_parameter,sidewall_spray_cooling,-,Shell water-spray cooling on metal/slag band,-,0,0,True,DEMO-ONLY,+/-20 % (example prior),config
+plant_parameter,spray_htc_w_m2k,h_spray,Shell spray-cooling heat-transfer coefficient,W/m2/K,50,3000,600,CALIBRATION-REQUIRED,+/-20 % (example prior),config
+plant_parameter,hearth_air_htc_w_m2k,"h_air,b",Under-hearth forced-air HTC,W/m2/K,5,200,35,DEMO-ONLY,+/-20 % (example prior),config
+plant_parameter,roof_water_htc_w_m2k,h_roof,Roof panel cooling-water HTC,W/m2/K,100,5000,1500,DEMO-ONLY,+/-20 % (example prior),config
+plant_parameter,cooling_water_inlet_k,"T_cw,in",Cooling-water inlet temperature,K,280,320,305.15,DEMO-ONLY,+/-20 % (example prior),config
+plant_parameter,refractory_lining,-,"Lining layup per wall region (material, thickness m)",-,0,0,table,DEMO-ONLY,+/-20 % (example prior),config
+plant_parameter,tap_interval_h,t_tap,Scheduled interval between taps,h,0.5,8,2.0,DEMO-ONLY,+/-20 % (example prior),config
+plant_parameter,tap_fraction_metal,phi_m,Fraction of metal above heel removed per tap,-,0.3,1.0,0.85,DEMO-ONLY,+/-20 % (example prior),config
+plant_parameter,tap_fraction_slag,phi_s,Fraction of slag above heel removed per tap,-,0.3,1.0,0.8,DEMO-ONLY,+/-20 % (example prior),config
+plant_parameter,lab_delay_min,t_lab,Laboratory reporting delay (metal/slag assays),min,5,240,45,DEMO-ONLY,+/-20 % (example prior),config
+plant_parameter,air_infiltration_nm3_per_nm3,lambda_air,Air ingress per Nm3 furnace gas (open/semi-closed),Nm3/Nm3,0,60,0.02,DEMO-ONLY,+/-20 % (example prior),config
+plant_parameter,co_alarm_ppm,-,Workplace CO advisory threshold at roof seal (example),ppm,10,500,50,DEMO-ONLY,+/-20 % (example prior),config
+plant_parameter,analyzer_lag_s,tau_an,Gas analyzer first-order lag,s,5,600,90,DEMO-ONLY,+/-20 % (example prior),config
+plant_parameter,target_cr_wt_pct,-,Product Cr target (min),wt%,45,75,52.0,DEMO-ONLY,+/-20 % (example prior),config
+plant_parameter,max_si_wt_pct,-,Product Si maximum,wt%,0.5,8,4.0,DEMO-ONLY,+/-20 % (example prior),config
+plant_parameter,max_c_wt_pct,-,Product C maximum,wt%,4,10,8.5,DEMO-ONLY,+/-20 % (example prior),config
+plant_parameter,max_p_wt_pct,-,Product P maximum,wt%,0.01,0.1,0.035,DEMO-ONLY,+/-20 % (example prior),config
+instrument_tag,EL_P_TOTAL,,Total active power (transformer secondary),MW,0,120,,source DCS; sigma 0.05; rate 1s; delay 0.0s,synthetic,power_mw
+instrument_tag,EL_P_FURNACE,,Active power into furnace (calc.),MW,0,120,,source CALC; sigma 0.05; rate 1s; delay 0.0s,synthetic,furnace_power_mw
+instrument_tag,EL_PF,,Power factor,-,0,1,,source DCS; sigma 0.003; rate 1s; delay 0.0s,synthetic,electrical.power_factor
+instrument_tag,EL_S,,Apparent power,MVA,0,150,,source DCS; sigma 0.08; rate 1s; delay 0.0s,synthetic,electrical.s_VA
+instrument_tag,EL_Q,,Reactive power,Mvar,0,120,,source DCS; sigma 0.08; rate 1s; delay 0.0s,synthetic,electrical.q_total_var
+instrument_tag,EL_TAP,,Transformer tap position,-,1,40,,source PLC; sigma 0.0; rate 1s; delay 0.0s,synthetic,electrical.tap
+instrument_tag,EL_VLL,,Secondary line voltage at tap,V,0,600,,source DCS; sigma 0.5; rate 1s; delay 0.0s,synthetic,electrical.v_line_V
+instrument_tag,EL_UNBAL,,Current unbalance,%,0,100,,source CALC; sigma 0.2; rate 1s; delay 0.0s,synthetic,electrical.current_unbalance_pct
+instrument_tag,EL_NEG_SEQ,,Negative-sequence current,%,0,100,,source CALC; sigma 0.2; rate 1s; delay 0.0s,synthetic,electrical.negative_sequence_pct
+instrument_tag,EL_NSHIFT,,Furnace star-point shift voltage,V,0,200,,source CALC; sigma 0.5; rate 1s; delay 0.0s,synthetic,electrical.neutral_shift_V
+instrument_tag,EL_I1,,Electrode 1 RMS current,kA,0,250,,source DCS; sigma 0.3; rate 1s; delay 0.0s,synthetic,electrical.i_phase_A.0
+instrument_tag,EL_V1,,Electrode 1 voltage to hearth,V,0,400,,source DCS; sigma 0.6; rate 1s; delay 0.0s,synthetic,electrical.v_phase_V.0
+instrument_tag,EL_R1,,Electrode 1 load resistance,mOhm,0,10,,source CALC; sigma 0.01; rate 1s; delay 0.0s,synthetic,electrical.r_load_mohm.0
+instrument_tag,EL_P1,,Electrode 1 active power,MW,0,50,,source DCS; sigma 0.05; rate 1s; delay 0.0s,synthetic,electrical.p_load_W.0
+instrument_tag,ELD_POS1,,Electrode 1 holder position,m,0,2.4,,source PLC; sigma 0.005; rate 1s; delay 0.0s,synthetic,electrical.holder_m.0
+instrument_tag,ELD_TIP1,,Electrode 1 estimated tip depth,m,0,6,,source CALC; sigma 0.05; rate 10s; delay 0.0s,synthetic,electrical.tip_depth_m.0
+instrument_tag,ELD_SLIP1,,Electrode 1 slip counter,-,0,1000000.0,,source PLC; sigma 0.0; rate 10s; delay 0.0s,synthetic,electrical.slips.0
+instrument_tag,EL_I2,,Electrode 2 RMS current,kA,0,250,,source DCS; sigma 0.3; rate 1s; delay 0.0s,synthetic,electrical.i_phase_A.1
+instrument_tag,EL_V2,,Electrode 2 voltage to hearth,V,0,400,,source DCS; sigma 0.6; rate 1s; delay 0.0s,synthetic,electrical.v_phase_V.1
+instrument_tag,EL_R2,,Electrode 2 load resistance,mOhm,0,10,,source CALC; sigma 0.01; rate 1s; delay 0.0s,synthetic,electrical.r_load_mohm.1
+instrument_tag,EL_P2,,Electrode 2 active power,MW,0,50,,source DCS; sigma 0.05; rate 1s; delay 0.0s,synthetic,electrical.p_load_W.1
+instrument_tag,ELD_POS2,,Electrode 2 holder position,m,0,2.4,,source PLC; sigma 0.005; rate 1s; delay 0.0s,synthetic,electrical.holder_m.1
+instrument_tag,ELD_TIP2,,Electrode 2 estimated tip depth,m,0,6,,source CALC; sigma 0.05; rate 10s; delay 0.0s,synthetic,electrical.tip_depth_m.1
+instrument_tag,ELD_SLIP2,,Electrode 2 slip counter,-,0,1000000.0,,source PLC; sigma 0.0; rate 10s; delay 0.0s,synthetic,electrical.slips.1
+instrument_tag,EL_I3,,Electrode 3 RMS current,kA,0,250,,source DCS; sigma 0.3; rate 1s; delay 0.0s,synthetic,electrical.i_phase_A.2
+instrument_tag,EL_V3,,Electrode 3 voltage to hearth,V,0,400,,source DCS; sigma 0.6; rate 1s; delay 0.0s,synthetic,electrical.v_phase_V.2
+instrument_tag,EL_R3,,Electrode 3 load resistance,mOhm,0,10,,source CALC; sigma 0.01; rate 1s; delay 0.0s,synthetic,electrical.r_load_mohm.2
+instrument_tag,EL_P3,,Electrode 3 active power,MW,0,50,,source DCS; sigma 0.05; rate 1s; delay 0.0s,synthetic,electrical.p_load_W.2
+instrument_tag,ELD_POS3,,Electrode 3 holder position,m,0,2.4,,source PLC; sigma 0.005; rate 1s; delay 0.0s,synthetic,electrical.holder_m.2
+instrument_tag,ELD_TIP3,,Electrode 3 estimated tip depth,m,0,6,,source CALC; sigma 0.05; rate 10s; delay 0.0s,synthetic,electrical.tip_depth_m.2
+instrument_tag,ELD_SLIP3,,Electrode 3 slip counter,-,0,1000000.0,,source PLC; sigma 0.0; rate 10s; delay 0.0s,synthetic,electrical.slips.2
+instrument_tag,TC_OFFGAS,,Off-gas temperature (duct),K,273,1800,,source DCS; sigma 4.0; rate 5s; delay 0.0s,synthetic,offgas_T_K
+instrument_tag,TC_SHELL_METAL,,"Shell thermocouple, metal band",K,273,900,,source DCS; sigma 1.5; rate 10s; delay 0.0s,synthetic,walls.metal_band.shell_T_K
+instrument_tag,TC_SHELL_SLAG,,"Shell thermocouple, slag band",K,273,900,,source DCS; sigma 1.5; rate 10s; delay 0.0s,synthetic,walls.slag_band.shell_T_K
+instrument_tag,TC_SHELL_BURDEN,,"Shell thermocouple, burden band",K,273,900,,source DCS; sigma 1.5; rate 10s; delay 0.0s,synthetic,walls.burden_lower.shell_T_K
+instrument_tag,TC_HEARTH_BOTTOM,,Hearth bottom plate thermocouple,K,273,900,,source DCS; sigma 1.5; rate 10s; delay 0.0s,synthetic,walls.hearth.shell_T_K
+instrument_tag,TC_HEARTH_HOTFACE,,Hearth carbon hot-face (embedded TC est.),K,273,2500,,source DCS; sigma 6.0; rate 10s; delay 0.0s,synthetic,walls.hearth.hot_face_T_K
+instrument_tag,TC_ROOF,,Roof panel temperature,K,273,900,,source DCS; sigma 1.5; rate 10s; delay 0.0s,synthetic,walls.roof.shell_T_K
+instrument_tag,CW_HEAT,,Cooling water heat removal,MW,0,20,,source CALC; sigma 0.02; rate 10s; delay 0.0s,synthetic,cooling_water_heat_MW
+instrument_tag,CW_DT,,Cooling water temperature rise,K,0,40,,source DCS; sigma 0.1; rate 10s; delay 0.0s,synthetic,cooling_water_dT_K
+instrument_tag,GAS_FLOW_DRY,,"Off-gas flow (dry, Nm3/h)",Nm3/h,0,200000.0,,source DCS; sigma 150; rate 5s; delay 0.0s,synthetic,dry_offgas_nm3_per_h
+instrument_tag,GAS_CO,,"Off-gas CO (dry, analyzer)",vol%,0,100,,source ANALYZER; sigma 0.4; rate 5s; delay 90s,synthetic,analyzer_dry_vol_pct.CO
+instrument_tag,GAS_CO2,,"Off-gas CO2 (dry, analyzer)",vol%,0,100,,source ANALYZER; sigma 0.3; rate 5s; delay 90s,synthetic,analyzer_dry_vol_pct.CO2
+instrument_tag,GAS_H2,,"Off-gas H2 (dry, analyzer)",vol%,0,100,,source ANALYZER; sigma 0.3; rate 5s; delay 90s,synthetic,analyzer_dry_vol_pct.H2
+instrument_tag,GAS_O2,,"Off-gas O2 (dry, analyzer)",vol%,0,25,,source ANALYZER; sigma 0.05; rate 5s; delay 60s,synthetic,offgas_dry_vol_pct.O2
+instrument_tag,GAS_N2,,"Off-gas N2 (dry, by difference)",vol%,0,100,,source CALC; sigma 0.5; rate 5s; delay 0.0s,synthetic,offgas_dry_vol_pct.N2
+instrument_tag,GAS_CH4,,Off-gas CH4 (dry),vol%,0,20,,source ANALYZER; sigma 0.05; rate 5s; delay 90s,synthetic,offgas_dry_vol_pct.CH4
+instrument_tag,DUST_LOAD,,Dust loading to gas cleaning,kg/h,0,5000,,source CALC; sigma 5; rate 60s; delay 0.0s,synthetic,dust_kg_per_h
+instrument_tag,BURDEN_DP,,Burden pressure-drop proxy,kPa,0,50,,source CALC; sigma 0.05; rate 5s; delay 0.0s,synthetic,burden_dp_kpa
+instrument_tag,FEED_RATE,,Charge feed rate (weigh-feeders),t/h,0,200,,source PLC; sigma 0.2; rate 10s; delay 0.0s,synthetic,feed_t_per_h
+instrument_tag,BURDEN_UPPER,,Upper burden inventory (level-derived),t,0,2000,,source CALC; sigma 2.0; rate 30s; delay 0.0s,synthetic,burden_upper_t
+instrument_tag,METAL_TAP_T,,"Metal tap temperature (pyrometer, at tap)",K,1500,2300,,source LAB; sigma 8.0; rate 3600s; delay 0.0s,synthetic,last_tap.metal_T_K
+instrument_tag,METAL_TAP_MASS,,Tapped metal mass (ladle weigh),t,0,200,,source PLC; sigma 0.3; rate 3600s; delay 0.0s,synthetic,last_tap.metal_t
+instrument_tag,SLAG_TAP_MASS,,Tapped slag mass (pot count est.),t,0,400,,source PLC; sigma 1.0; rate 3600s; delay 0.0s,synthetic,last_tap.slag_t
+instrument_tag,LAB_METAL_CR,,Lab metal Cr,wt%,0,100,,source LAB; sigma 0.25; rate 7200s; delay 2700s,synthetic,latest_lab.metal.Cr
+instrument_tag,LAB_METAL_C,,Lab metal C,wt%,0,12,,source LAB; sigma 0.05; rate 7200s; delay 2700s,synthetic,latest_lab.metal.C
+instrument_tag,LAB_METAL_SI,,Lab metal Si,wt%,0,15,,source LAB; sigma 0.05; rate 7200s; delay 2700s,synthetic,latest_lab.metal.Si
+instrument_tag,LAB_SLAG_CR2O3,,"Lab slag Cr2O3 (total, XRF)",wt%,0,40,,source LAB; sigma 0.2; rate 7200s; delay 2700s,synthetic,latest_lab.slag.Cr2O3
+instrument_tag,LAB_SLAG_SIO2,,Lab slag SiO2,wt%,0,60,,source LAB; sigma 0.2; rate 7200s; delay 2700s,synthetic,latest_lab.slag.SiO2
+instrument_tag,LAB_SLAG_MGO,,Lab slag MgO,wt%,0,60,,source LAB; sigma 0.2; rate 7200s; delay 2700s,synthetic,latest_lab.slag.MgO
+instrument_tag,LAB_SLAG_AL2O3,,Lab slag Al2O3,wt%,0,60,,source LAB; sigma 0.2; rate 7200s; delay 2700s,synthetic,latest_lab.slag.Al2O3
+species,Cr2O3,,chromium(III) oxide,kg/mol,0,0,0.151989,SOURCE-VERIFIED,dHf298=-1139700 J/mol,species.py
+species,CrO,,chromium(II) oxide (slag),kg/mol,0,0,0.067995,HYPOTHESIS,dHf298=-340000 J/mol,species.py
+species,FeO,,wustite,kg/mol,0,0,0.071844,SOURCE-VERIFIED,dHf298=-272000 J/mol,species.py
+species,Fe2O3,,hematite,kg/mol,0,0,0.159687,SOURCE-VERIFIED,dHf298=-824200 J/mol,species.py
+species,SiO2,,silica,kg/mol,0,0,0.060083,SOURCE-VERIFIED,dHf298=-910700 J/mol,species.py
+species,Al2O3,,alumina,kg/mol,0,0,0.101961,SOURCE-VERIFIED,dHf298=-1675700 J/mol,species.py
+species,MgO,,periclase,kg/mol,0,0,0.040304,SOURCE-VERIFIED,dHf298=-601600 J/mol,species.py
+species,CaO,,lime,kg/mol,0,0,0.056077,SOURCE-VERIFIED,dHf298=-635100 J/mol,species.py
+species,MnO,,manganosite,kg/mol,0,0,0.070937,SOURCE-VERIFIED,dHf298=-385200 J/mol,species.py
+species,TiO2,,rutile,kg/mol,0,0,0.079865,SOURCE-VERIFIED,dHf298=-944000 J/mol,species.py
+species,P2O5,,phosphorus pentoxide (slag basis),kg/mol,0,0,0.141943,CALIBRATION-REQUIRED,dHf298=-1504900 J/mol,species.py
+species,FeCr2O4,,ferrous chromite spinel,kg/mol,0,0,0.223833,CALIBRATION-REQUIRED,dHf298=-1444700 J/mol,species.py
+species,MgCr2O4,,magnesiochromite spinel,kg/mol,0,0,0.192293,CALIBRATION-REQUIRED,dHf298=-1783000 J/mol,species.py
+species,MgAl2O4,,spinel (Mg-Al),kg/mol,0,0,0.142265,SOURCE-VERIFIED,dHf298=-2299000 J/mol,species.py
+species,CaCO3,,calcite,kg/mol,0,0,0.100086,SOURCE-VERIFIED,dHf298=-1207600 J/mol,species.py
+species,MgCO3,,magnesite (carbonate),kg/mol,0,0,0.084313,SOURCE-VERIFIED,dHf298=-1095800 J/mol,species.py
+species,H2O_l,,free moisture,kg/mol,0,0,0.018015,SOURCE-VERIFIED,dHf298=-285830 J/mol,species.py
+species,VOL,,coal volatile matter (CH4-equivalent),kg/mol,0,0,0.016043,HYPOTHESIS,dHf298=-74870 J/mol,species.py
+species,C,,carbon (coke/coal fixed C),kg/mol,0,0,0.012011,SOURCE-VERIFIED,dHf298=0.0 J/mol,species.py
+species,C_el,,electrode carbon,kg/mol,0,0,0.012011,SOURCE-VERIFIED,dHf298=0.0 J/mol,species.py
+species,C_m,,carbon dissolved in metal,kg/mol,0,0,0.012011,CALIBRATION-REQUIRED,dHf298=22600 J/mol,species.py
+species,Fe,,iron,kg/mol,0,0,0.055845,SOURCE-VERIFIED,dHf298=0.0 J/mol,species.py
+species,Cr,,chromium,kg/mol,0,0,0.051996,SOURCE-VERIFIED,dHf298=0.0 J/mol,species.py
+species,Si,,silicon (dissolved),kg/mol,0,0,0.028085,SOURCE-VERIFIED,dHf298=0.0 J/mol,species.py
+species,Mn,,manganese,kg/mol,0,0,0.054938,SOURCE-VERIFIED,dHf298=0.0 J/mol,species.py
+species,P,,phosphorus (dissolved),kg/mol,0,0,0.030974,CALIBRATION-REQUIRED,dHf298=0.0 J/mol,species.py
+species,S,,sulfur,kg/mol,0,0,0.03206,CALIBRATION-REQUIRED,dHf298=0.0 J/mol,species.py
+species,Cr7C3,,chromium carbide (M7C3 surrogate),kg/mol,0,0,0.400006,CALIBRATION-REQUIRED,dHf298=-228000 J/mol,species.py
+species,CaS,,calcium sulfide (slag),kg/mol,0,0,0.072138,SOURCE-VERIFIED,dHf298=-482400 J/mol,species.py
+species,CO,,carbon monoxide,kg/mol,0,0,0.02801,SOURCE-VERIFIED,dHf298=-110530 J/mol,species.py
+species,CO2,,carbon dioxide,kg/mol,0,0,0.044009,SOURCE-VERIFIED,dHf298=-393510 J/mol,species.py
+species,H2,,hydrogen,kg/mol,0,0,0.002016,SOURCE-VERIFIED,dHf298=0.0 J/mol,species.py
+species,H2O,,water vapour,kg/mol,0,0,0.018015,SOURCE-VERIFIED,dHf298=-241830 J/mol,species.py
+species,N2,,nitrogen,kg/mol,0,0,0.028014,SOURCE-VERIFIED,dHf298=0.0 J/mol,species.py
+species,O2,,oxygen,kg/mol,0,0,0.031998,SOURCE-VERIFIED,dHf298=0.0 J/mol,species.py
+species,CH4,,methane,kg/mol,0,0,0.016043,SOURCE-VERIFIED,dHf298=-74870 J/mol,species.py
+state_field,metal_inventory_t,,metal bath inventory,t,,,,api,,GET /api/v1/simulation/{id}
+state_field,slag_inventory_t,,slag inventory incl. spinel and droplets,t,,,,api,,GET /api/v1/simulation/{id}
+state_field,fecr_cr_wt_pct,,predicted metal Cr,wt%,,,,api,,GET /api/v1/simulation/{id}
+state_field,fecr_c_wt_pct,,predicted metal C,wt%,,,,api,,GET /api/v1/simulation/{id}
+state_field,fecr_si_wt_pct,,predicted metal Si,wt%,,,,api,,GET /api/v1/simulation/{id}
+state_field,slag_cr2o3_equiv_wt_pct,,Cr2O3+CrO as Cr2O3 incl. spinel,wt%,,,,api,,GET /api/v1/simulation/{id}
+state_field,cr_recovery_pct,,Cr metal/(metal+slag+dust) tapped 24 h,%,,,,api,,GET /api/v1/simulation/{id}
+state_field,power_mw,,secondary active power,MW,,,,api,,GET /api/v1/simulation/{id}
+state_field,specific_electric_energy_kwh_per_t_fecr,,24 h SEC tapped basis,kWh/t,,,,api,,GET /api/v1/simulation/{id}
+state_field,electrode_depth_m,,"tip depth below burden, 3 values",m,,,,api,,GET /api/v1/simulation/{id}
+state_field,zone_temperature_k,,"B1,B2,CB,SL,MB,FB",K,,,,api,,GET /api/v1/simulation/{id}
+state_field,offgas_co_dry_vol_pct,,model CO,vol% dry,,,,api,,GET /api/v1/simulation/{id}
+state_field,dry_offgas_nm3_per_h,,"dry off-gas at 0C,101.325kPa",Nm3/h,,,,api,,GET /api/v1/simulation/{id}
+state_field,mass_balance_cr_residual_kg_per_h,,Cr ledger residual,kg/h,,,,api,,GET /api/v1/simulation/{id}
+state_field,energy_balance_residual_mw,,energy ledger residual,MW,,,,api,,GET /api/v1/simulation/{id}
+state_field,coke_bed_fill,,coke-bed carbon / reference,-,,,,api,,GET /api/v1/simulation/{id}
+state_field,model_quality,,physics-only|frozen,-,,,,api,,GET /api/v1/simulation/{id}
+state_field,synthetic,,true for synthetic data,-,,,,api,,GET /api/v1/simulation/{id}
+state_field,last_updated_at,,simulation clock,s,,,,api,,GET /api/v1/simulation/{id}
+trend_column,t_h,,compact history column,see state field,,,,api,,GET /api/v1/simulation/{id}/timeseries
+trend_column,power_mw,,compact history column,see state field,,,,api,,GET /api/v1/simulation/{id}/timeseries
+trend_column,furnace_power_mw,,compact history column,see state field,,,,api,,GET /api/v1/simulation/{id}/timeseries
+trend_column,metal_inventory_t,,compact history column,see state field,,,,api,,GET /api/v1/simulation/{id}/timeseries
+trend_column,slag_inventory_t,,compact history column,see state field,,,,api,,GET /api/v1/simulation/{id}/timeseries
+trend_column,fecr_cr_wt_pct,,compact history column,see state field,,,,api,,GET /api/v1/simulation/{id}/timeseries
+trend_column,fecr_c_wt_pct,,compact history column,see state field,,,,api,,GET /api/v1/simulation/{id}/timeseries
+trend_column,fecr_si_wt_pct,,compact history column,see state field,,,,api,,GET /api/v1/simulation/{id}/timeseries
+trend_column,slag_cr2o3_equiv_wt_pct,,compact history column,see state field,,,,api,,GET /api/v1/simulation/{id}/timeseries
+trend_column,offgas_co_dry_vol_pct,,compact history column,see state field,,,,api,,GET /api/v1/simulation/{id}/timeseries
+trend_column,dry_offgas_nm3_per_h,,compact history column,see state field,,,,api,,GET /api/v1/simulation/{id}/timeseries
+trend_column,coke_bed_fill,,compact history column,see state field,,,,api,,GET /api/v1/simulation/{id}/timeseries
+trend_column,coke_bed_carbon_t,,compact history column,see state field,,,,api,,GET /api/v1/simulation/{id}/timeseries
+trend_column,feed_t_per_h,,compact history column,see state field,,,,api,,GET /api/v1/simulation/{id}/timeseries
+trend_column,burden_dp_kpa,,compact history column,see state field,,,,api,,GET /api/v1/simulation/{id}/timeseries
+trend_column,permeability_index,,compact history column,see state field,,,,api,,GET /api/v1/simulation/{id}/timeseries
+trend_column,heat_loss_total_MW,,compact history column,see state field,,,,api,,GET /api/v1/simulation/{id}/timeseries
+trend_column,energy_balance_residual_mw,,compact history column,see state field,,,,api,,GET /api/v1/simulation/{id}/timeseries
+trend_column,mass_balance_cr_residual_kg_per_h,,compact history column,see state field,,,,api,,GET /api/v1/simulation/{id}/timeseries
+trend_column,undissolved_chromite_t,,compact history column,see state field,,,,api,,GET /api/v1/simulation/{id}/timeseries
+trend_column,droplets_in_slag_t,,compact history column,see state field,,,,api,,GET /api/v1/simulation/{id}/timeseries
+trend_column,offgas_T_K,,compact history column,see state field,,,,api,,GET /api/v1/simulation/{id}/timeseries
+trend_column,dust_kg_per_h,,compact history column,see state field,,,,api,,GET /api/v1/simulation/{id}/timeseries
+trend_column,freeze_lining_m,,compact history column,see state field,,,,api,,GET /api/v1/simulation/{id}/timeseries
+trend_column,cooling_water_heat_MW,,compact history column,see state field,,,,api,,GET /api/v1/simulation/{id}/timeseries
+trend_column,production_rate_t_per_h_est,,compact history column,see state field,,,,api,,GET /api/v1/simulation/{id}/timeseries
+trend_column,offgas_chemical_MW,,compact history column,see state field,,,,api,,GET /api/v1/simulation/{id}/timeseries
+trend_column,specific_electric_energy_kwh_per_t_fecr,,compact history column,see state field,,,,api,,GET /api/v1/simulation/{id}/timeseries
+trend_column,cr_recovery_pct,,compact history column,see state field,,,,api,,GET /api/v1/simulation/{id}/timeseries

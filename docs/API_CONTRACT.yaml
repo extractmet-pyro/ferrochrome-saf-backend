@@ -1,0 +1,2119 @@
+openapi: 3.1.0
+info:
+  title: FeCr-TWIN API - Ferrochrome SAF Digital Twin (Extractmet Private Limited)
+  description: SYNTHETIC / NOT PLANT-VALIDATED. Advisory-only digital twin; no plant
+    write path exists.
+  version: 1.0.0
+paths:
+  /api/v1/auth/login:
+    post:
+      tags:
+      - auth
+      summary: Login
+      operationId: auth_login
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginIn'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TokenOut'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /api/v1/auth/me:
+    get:
+      tags:
+      - auth
+      summary: Me
+      operationId: auth_me
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+      security:
+      - HTTPBearer: []
+  /api/v1/health:
+    get:
+      tags:
+      - health
+      summary: Health
+      operationId: health
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Health'
+  /api/v1/ready:
+    get:
+      tags:
+      - health
+      summary: Ready
+      operationId: ready
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Ready'
+  /api/v1/version:
+    get:
+      tags:
+      - health
+      summary: Version
+      operationId: version
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Version'
+  /api/v1/capabilities:
+    get:
+      tags:
+      - health
+      summary: Capabilities
+      operationId: capabilities
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+  /api/v1/config/plant:
+    get:
+      tags:
+      - plant
+      summary: Get Plant
+      operationId: get_plant_config
+      security:
+      - HTTPBearer: []
+      parameters:
+      - name: mva
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: number
+          - type: 'null'
+          title: Mva
+      - name: enclosure
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Enclosure
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+    put:
+      tags:
+      - plant
+      summary: Put Plant
+      operationId: put_plant_config
+      security:
+      - HTTPBearer: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PlantUpdate'
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /api/v1/config/capacities:
+    get:
+      tags:
+      - plant
+      summary: Capacities
+      operationId: capacity_table
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+      security:
+      - HTTPBearer: []
+  /api/v1/config/tags:
+    get:
+      tags:
+      - plant
+      summary: Get Tags
+      operationId: get_tags
+      security:
+      - HTTPBearer: []
+      parameters:
+      - name: fmt
+        in: query
+        required: false
+        schema:
+          type: string
+          default: json
+          title: Fmt
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /api/v1/config/materials:
+    get:
+      tags:
+      - plant
+      summary: Materials
+      operationId: get_materials
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+      security:
+      - HTTPBearer: []
+  /api/v1/config/refractory:
+    get:
+      tags:
+      - plant
+      summary: Refractory
+      operationId: refractory_materials
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+      security:
+      - HTTPBearer: []
+  /api/v1/validate/assay:
+    post:
+      tags:
+      - plant
+      summary: Validate
+      operationId: validate_assay
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AssayIn'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - HTTPBearer: []
+  /api/v1/thermo/species:
+    get:
+      tags:
+      - plant
+      summary: Species
+      operationId: species_table
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+      security:
+      - HTTPBearer: []
+  /api/v1/thermo/reactions:
+    get:
+      tags:
+      - plant
+      summary: Reactions
+      operationId: reaction_table
+      security:
+      - HTTPBearer: []
+      parameters:
+      - name: T_K
+        in: query
+        required: false
+        schema:
+          type: number
+          default: 1973.15
+          title: T K
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /api/v1/balance/static:
+    post:
+      tags:
+      - charge & balance
+      summary: Balance Static
+      operationId: static_balance
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BalanceIn'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - HTTPBearer: []
+  /api/v1/balance/check:
+    post:
+      tags:
+      - charge & balance
+      summary: Balance Check
+      description: Element-closure audit of the static balance (inputs vs metal+slag+gas+dust+coke-bed
+        surplus).
+      operationId: balance_check
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BalanceIn'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - HTTPBearer: []
+  /api/v1/charges/optimize:
+    post:
+      tags:
+      - charge & balance
+      summary: Optimise
+      operationId: optimise_charge
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OptimiseIn'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - HTTPBearer: []
+  /api/v1/balance/uncertainty:
+    post:
+      tags:
+      - charge & balance
+      summary: Uncertainty
+      operationId: balance_uncertainty
+      security:
+      - HTTPBearer: []
+      parameters:
+      - name: n
+        in: query
+        required: false
+        schema:
+          type: integer
+          default: 120
+          title: N
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BalanceIn'
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /api/v1/balance/sensitivity:
+    post:
+      tags:
+      - charge & balance
+      summary: Sens
+      operationId: balance_sensitivity
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BalanceIn'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - HTTPBearer: []
+  /api/v1/economics/kpis:
+    post:
+      tags:
+      - charge & balance
+      summary: Econ
+      operationId: economics_kpis
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BalanceIn'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - HTTPBearer: []
+  /api/v1/simulation/run:
+    post:
+      tags:
+      - simulation
+      summary: Create
+      operationId: simulation_create
+      security:
+      - HTTPBearer: []
+      parameters:
+      - name: Idempotency-Key
+        in: header
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Idempotency-Key
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SimCreate'
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /api/v1/simulation/sessions:
+    get:
+      tags:
+      - simulation
+      summary: List Sessions
+      operationId: simulation_list
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+      security:
+      - HTTPBearer: []
+  /api/v1/simulation/{sid}:
+    get:
+      tags:
+      - simulation
+      summary: State
+      operationId: simulation_state
+      security:
+      - HTTPBearer: []
+      parameters:
+      - name: sid
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Sid
+      - name: light
+        in: query
+        required: false
+        schema:
+          type: boolean
+          default: false
+          title: Light
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /api/v1/simulation/{sid}/step:
+    post:
+      tags:
+      - simulation
+      summary: Step
+      operationId: simulation_step
+      security:
+      - HTTPBearer: []
+      parameters:
+      - name: sid
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Sid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/StepIn'
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /api/v1/simulation/{sid}/pause:
+    post:
+      tags:
+      - simulation
+      summary: Pause
+      operationId: simulation_pause
+      security:
+      - HTTPBearer: []
+      parameters:
+      - name: sid
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Sid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              anyOf:
+              - $ref: '#/components/schemas/SpeedIn'
+              - type: 'null'
+              title: Body
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /api/v1/simulation/{sid}/reset:
+    post:
+      tags:
+      - simulation
+      summary: Reset
+      operationId: simulation_reset
+      security:
+      - HTTPBearer: []
+      parameters:
+      - name: sid
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Sid
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /api/v1/simulation/{sid}/action:
+    post:
+      tags:
+      - simulation
+      summary: Action
+      description: What-if action on the SIMULATED furnace only (never a plant command).
+      operationId: simulation_action
+      security:
+      - HTTPBearer: []
+      parameters:
+      - name: sid
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Sid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ActionIn'
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /api/v1/simulation/{sid}/timeseries:
+    get:
+      tags:
+      - simulation
+      summary: Timeseries
+      operationId: simulation_timeseries
+      security:
+      - HTTPBearer: []
+      parameters:
+      - name: sid
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Sid
+      - name: fmt
+        in: query
+        required: false
+        schema:
+          type: string
+          default: json
+          title: Fmt
+      - name: t_from
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: number
+          - type: 'null'
+          title: T From
+      - name: t_to
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: number
+          - type: 'null'
+          title: T To
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: integer
+          default: 3000
+          title: Limit
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /api/v1/simulation/{sid}/details:
+    get:
+      tags:
+      - simulation
+      summary: Details
+      description: 'Heavy payloads: wall temperature profiles, mass/energy ledgers,
+        taps, events, labs.'
+      operationId: simulation_details
+      security:
+      - HTTPBearer: []
+      parameters:
+      - name: sid
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Sid
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /api/v1/scenarios/catalog:
+    get:
+      tags:
+      - simulation
+      summary: Catalog
+      operationId: scenario_catalog
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+      security:
+      - HTTPBearer: []
+  /api/v1/scenario/compare:
+    post:
+      tags:
+      - simulation
+      summary: Compare
+      operationId: scenario_compare
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ScenarioCompareIn'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - HTTPBearer: []
+  /api/v1/scenarios:
+    get:
+      tags:
+      - simulation
+      summary: Scenarios
+      operationId: scenarios_list
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+      security:
+      - HTTPBearer: []
+    post:
+      tags:
+      - simulation
+      summary: Save
+      operationId: scenarios_save
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ScenarioSave'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - HTTPBearer: []
+  /api/v1/scenarios/{scid}:
+    get:
+      tags:
+      - simulation
+      summary: Get Scenario
+      operationId: scenario_get
+      security:
+      - HTTPBearer: []
+      parameters:
+      - name: scid
+        in: path
+        required: true
+        schema:
+          type: integer
+          title: Scid
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /api/v1/jobs/{jid}:
+    get:
+      tags:
+      - simulation
+      summary: Job
+      operationId: job_get
+      security:
+      - HTTPBearer: []
+      parameters:
+      - name: jid
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Jid
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /api/v1/jobs/{jid}/cancel:
+    post:
+      tags:
+      - simulation
+      summary: Job Cancel
+      operationId: job_cancel
+      security:
+      - HTTPBearer: []
+      parameters:
+      - name: jid
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Jid
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /api/v1/telemetry/import:
+    post:
+      tags:
+      - telemetry & replay
+      summary: Import File
+      operationId: telemetry_import
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Body_telemetry_import'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - HTTPBearer: []
+  /api/v1/telemetry/mapping:
+    post:
+      tags:
+      - telemetry & replay
+      summary: Set Mapping
+      operationId: telemetry_mapping
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TagMapIn'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - HTTPBearer: []
+  /api/v1/telemetry/latest:
+    get:
+      tags:
+      - telemetry & replay
+      summary: Latest
+      operationId: telemetry_latest
+      security:
+      - HTTPBearer: []
+      parameters:
+      - name: session_id
+        in: query
+        required: true
+        schema:
+          type: string
+          title: Session Id
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /api/v1/telemetry/history:
+    get:
+      tags:
+      - telemetry & replay
+      summary: History
+      operationId: telemetry_history
+      security:
+      - HTTPBearer: []
+      parameters:
+      - name: dataset_id
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Dataset Id
+      - name: session_id
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Session Id
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: integer
+          default: 2000
+          title: Limit
+      - name: offset
+        in: query
+        required: false
+        schema:
+          type: integer
+          default: 0
+          title: Offset
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /api/v1/telemetry/datasets:
+    get:
+      tags:
+      - telemetry & replay
+      summary: Datasets
+      operationId: telemetry_datasets
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+      security:
+      - HTTPBearer: []
+  /api/v1/replay/{dataset_id}:
+    post:
+      tags:
+      - telemetry & replay
+      summary: Replay
+      description: Compare imported measurements with the twin (driven by imported
+        EL_TAP / recipe columns where present).
+      operationId: replay_dataset
+      security:
+      - HTTPBearer: []
+      parameters:
+      - name: dataset_id
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Dataset Id
+      - name: session_id
+        in: query
+        required: true
+        schema:
+          type: string
+          title: Session Id
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /api/v1/quality/events:
+    get:
+      tags:
+      - telemetry & replay
+      summary: Quality
+      operationId: quality_events
+      security:
+      - HTTPBearer: []
+      parameters:
+      - name: session_id
+        in: query
+        required: true
+        schema:
+          type: string
+          title: Session Id
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /api/v1/estimator/update:
+    post:
+      tags:
+      - estimator
+      summary: Update
+      operationId: estimator_update
+      security:
+      - HTTPBearer: []
+      parameters:
+      - name: session_id
+        in: query
+        required: true
+        schema:
+          type: string
+          title: Session Id
+      - name: steps
+        in: query
+        required: false
+        schema:
+          type: integer
+          default: 1
+          title: Steps
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /api/v1/estimator/state:
+    get:
+      tags:
+      - estimator
+      summary: State
+      operationId: estimator_state
+      security:
+      - HTTPBearer: []
+      parameters:
+      - name: session_id
+        in: query
+        required: true
+        schema:
+          type: string
+          title: Session Id
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /api/v1/models/train:
+    post:
+      tags:
+      - machine learning
+      summary: Train
+      operationId: models_train
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TrainIn'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - HTTPBearer: []
+  /api/v1/models:
+    get:
+      tags:
+      - machine learning
+      summary: Models
+      operationId: models_list
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+      security:
+      - HTTPBearer: []
+  /api/v1/models/{mid}/metrics:
+    get:
+      tags:
+      - machine learning
+      summary: Metrics
+      operationId: models_metrics
+      security:
+      - HTTPBearer: []
+      parameters:
+      - name: mid
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Mid
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /api/v1/models/{mid}/activate:
+    post:
+      tags:
+      - machine learning
+      summary: Activate
+      operationId: models_activate
+      security:
+      - HTTPBearer: []
+      parameters:
+      - name: mid
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Mid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ActivateIn'
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /api/v1/models/campaign/summary:
+    get:
+      tags:
+      - machine learning
+      summary: Campaign
+      operationId: campaign_summary
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+      security:
+      - HTTPBearer: []
+  /api/v1/mpc/recommend:
+    post:
+      tags:
+      - supervisory MPC (advisory)
+      summary: Recommend
+      operationId: mpc_recommend
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RecommendIn'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - HTTPBearer: []
+  /api/v1/mpc/diagnostics:
+    get:
+      tags:
+      - supervisory MPC (advisory)
+      summary: Diagnostics
+      operationId: mpc_diagnostics
+      security:
+      - HTTPBearer: []
+      parameters:
+      - name: session_id
+        in: query
+        required: true
+        schema:
+          type: string
+          title: Session Id
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /api/v1/mpc/recommendations/{rid_}/decision:
+    post:
+      tags:
+      - supervisory MPC (advisory)
+      summary: Decision
+      operationId: mpc_decision
+      security:
+      - HTTPBearer: []
+      parameters:
+      - name: rid_
+        in: path
+        required: true
+        schema:
+          type: string
+          title: 'Rid '
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DecisionIn'
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /api/v1/mpc/recommendations/{rid_}/apply-to-simulation:
+    post:
+      tags:
+      - supervisory MPC (advisory)
+      summary: Apply Sim
+      description: Apply an ACCEPTED recommendation to the SIMULATED furnace (what-if).
+        Never reaches a plant.
+      operationId: mpc_apply_sim
+      security:
+      - HTTPBearer: []
+      parameters:
+      - name: rid_
+        in: path
+        required: true
+        schema:
+          type: string
+          title: 'Rid '
+      - name: session_id
+        in: query
+        required: true
+        schema:
+          type: string
+          title: Session Id
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /api/v1/mpc/rollback:
+    post:
+      tags:
+      - supervisory MPC (advisory)
+      summary: Rollback
+      operationId: mpc_rollback
+      security:
+      - HTTPBearer: []
+      parameters:
+      - name: session_id
+        in: query
+        required: true
+        schema:
+          type: string
+          title: Session Id
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /api/v1/mpc/compare:
+    post:
+      tags:
+      - supervisory MPC (advisory)
+      summary: Compare
+      operationId: mpc_compare
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CompareIn'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - HTTPBearer: []
+  /api/v1/reports/kpis:
+    get:
+      tags:
+      - reports & audit
+      summary: Kpis
+      operationId: reports_kpis
+      security:
+      - HTTPBearer: []
+      parameters:
+      - name: session_id
+        in: query
+        required: true
+        schema:
+          type: string
+          title: Session Id
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /api/v1/reports/export:
+    post:
+      tags:
+      - reports & audit
+      summary: Export
+      operationId: reports_export
+      security:
+      - HTTPBearer: []
+      parameters:
+      - name: session_id
+        in: query
+        required: true
+        schema:
+          type: string
+          title: Session Id
+      - name: fmt
+        in: query
+        required: false
+        schema:
+          type: string
+          default: json
+          title: Fmt
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /api/v1/audit:
+    get:
+      tags:
+      - reports & audit
+      summary: Audit List
+      operationId: audit_list
+      security:
+      - HTTPBearer: []
+      parameters:
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: integer
+          default: 200
+          title: Limit
+      - name: offset
+        in: query
+        required: false
+        schema:
+          type: integer
+          default: 0
+          title: Offset
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+components:
+  schemas:
+    ActionIn:
+      properties:
+        action:
+          type: string
+          enum:
+          - set_tap
+          - set_resistance
+          - set_recipe
+          - set_tap_interval
+          - disturb
+          - tap_now
+          title: Action
+        params:
+          additionalProperties: true
+          type: object
+          title: Params
+        reason:
+          type: string
+          maxLength: 300
+          title: Reason
+          default: what-if
+      type: object
+      required:
+      - action
+      title: ActionIn
+    ActivateIn:
+      properties:
+        reason:
+          type: string
+          maxLength: 500
+          minLength: 5
+          title: Reason
+          description: change-management justification (audited)
+      type: object
+      required:
+      - reason
+      title: ActivateIn
+    AssayIn:
+      properties:
+        assay_wt_pct_dry:
+          additionalProperties:
+            type: number
+          type: object
+          title: Assay Wt Pct Dry
+          description: dry-basis wt% (must total 100 +/- 2); explicit speciation
+        moisture_wet_wt_pct:
+          type: number
+          maximum: 40.0
+          minimum: 0.0
+          title: Moisture Wet Wt Pct
+          description: free moisture, wt% of wet (as-received) mass
+          default: 0.0
+        basis:
+          type: string
+          title: Basis
+          description: only 'wt_pct' accepted; mass fractions are rejected
+          default: wt_pct
+      type: object
+      required:
+      - assay_wt_pct_dry
+      title: AssayIn
+    BalanceIn:
+      properties:
+        recipe:
+          $ref: '#/components/schemas/Recipe'
+        conditions:
+          additionalProperties:
+            type: number
+          type: object
+          title: Conditions
+          description: T_metal_K, T_slag_K, T_gas_K, T_feed_K, heat_loss_MW, ...
+        prices:
+          additionalProperties:
+            type: number
+          type: object
+          title: Prices
+      type: object
+      required:
+      - recipe
+      title: BalanceIn
+    Body_telemetry_import:
+      properties:
+        file:
+          type: string
+          contentMediaType: application/octet-stream
+          title: File
+      type: object
+      required:
+      - file
+      title: Body_telemetry_import
+    CompareIn:
+      properties:
+        scenario:
+          type: string
+          pattern: ^[A-L]$
+          title: Scenario
+          default: D
+        hours:
+          type: number
+          maximum: 48.0
+          exclusiveMinimum: 1.0
+          title: Hours
+          default: 12.0
+        hybrid:
+          type: boolean
+          title: Hybrid
+          default: true
+      type: object
+      title: CompareIn
+    DecisionIn:
+      properties:
+        decision:
+          type: string
+          enum:
+          - accept
+          - reject
+          title: Decision
+        reason:
+          type: string
+          maxLength: 500
+          minLength: 3
+          title: Reason
+          description: operator reason (mandatory, audited)
+      type: object
+      required:
+      - decision
+      - reason
+      title: DecisionIn
+    HTTPValidationError:
+      properties:
+        detail:
+          items:
+            $ref: '#/components/schemas/ValidationError'
+          type: array
+          title: Detail
+      type: object
+      title: HTTPValidationError
+    Health:
+      properties:
+        status:
+          type: string
+          title: Status
+        advisory_only:
+          type: boolean
+          title: Advisory Only
+          default: true
+      type: object
+      required:
+      - status
+      title: Health
+    LoginIn:
+      properties:
+        username:
+          type: string
+          title: Username
+        password:
+          type: string
+          title: Password
+      type: object
+      required:
+      - username
+      - password
+      title: LoginIn
+    OptimiseIn:
+      properties:
+        base_recipe:
+          $ref: '#/components/schemas/Recipe'
+        ores:
+          items:
+            type: string
+          type: array
+          title: Ores
+          default:
+          - ORE_A_LUMPY
+          - ORE_B_PELLET
+          - ORE_C_FRIABLE
+        reductants:
+          items:
+            type: string
+          type: array
+          title: Reductants
+          default:
+          - COKE_MET
+          - COAL_LA
+        fluxes:
+          items:
+            type: string
+          type: array
+          title: Fluxes
+          default:
+          - QUARTZITE
+          - LIMESTONE
+        constraints:
+          additionalProperties:
+            type: number
+          type: object
+          title: Constraints
+        prices:
+          additionalProperties:
+            type: number
+          type: object
+          title: Prices
+        conditions:
+          additionalProperties:
+            type: number
+          type: object
+          title: Conditions
+        bounds:
+          additionalProperties:
+            items:
+              type: number
+            type: array
+          type: object
+          title: Bounds
+          description: var -> [lo, hi]; ores as blend fraction, others kg/t ore
+      type: object
+      required:
+      - base_recipe
+      title: OptimiseIn
+    PlantUpdate:
+      properties:
+        changes:
+          additionalProperties: true
+          type: object
+          title: Changes
+          description: parameter name -> new value (units as listed in GET /config/plant)
+        reason:
+          type: string
+          maxLength: 500
+          minLength: 3
+          title: Reason
+      type: object
+      required:
+      - changes
+      - reason
+      title: PlantUpdate
+    Ready:
+      properties:
+        ready:
+          type: boolean
+          title: Ready
+        database:
+          type: boolean
+          title: Database
+        models_active:
+          additionalProperties: true
+          type: object
+          title: Models Active
+        warm_start_cached:
+          type: boolean
+          title: Warm Start Cached
+      type: object
+      required:
+      - ready
+      - database
+      - models_active
+      - warm_start_cached
+      title: Ready
+    Recipe:
+      properties:
+        ore_blend:
+          additionalProperties:
+            type: number
+          type: object
+          title: Ore Blend
+          description: ore key -> mass fraction of the ore blend (normalised)
+        COKE_MET:
+          type: number
+          maximum: 400.0
+          minimum: 0.0
+          title: Coke Met
+          description: kg wet per t ore
+          default: 172.0
+        COAL_LA:
+          type: number
+          maximum: 300.0
+          minimum: 0.0
+          title: Coal La
+          description: kg wet per t ore
+          default: 40.0
+        COKE_LOWQ:
+          type: number
+          maximum: 400.0
+          minimum: 0.0
+          title: Coke Lowq
+          default: 0.0
+        QUARTZITE:
+          type: number
+          maximum: 300.0
+          minimum: 0.0
+          title: Quartzite
+          default: 85.0
+        LIMESTONE:
+          type: number
+          maximum: 200.0
+          minimum: 0.0
+          title: Limestone
+          default: 0.0
+        DOLOMITE:
+          type: number
+          maximum: 200.0
+          minimum: 0.0
+          title: Dolomite
+          default: 0.0
+        METAL_RECYCLE:
+          type: number
+          maximum: 200.0
+          minimum: 0.0
+          title: Metal Recycle
+          default: 0.0
+      type: object
+      required:
+      - ore_blend
+      title: Recipe
+    RecommendIn:
+      properties:
+        session_id:
+          type: string
+          title: Session Id
+        hybrid:
+          type: boolean
+          title: Hybrid
+          description: add in-distribution ML residual corrections to SEC / Cr recovery
+          default: false
+      type: object
+      required:
+      - session_id
+      title: RecommendIn
+    ScenarioCompareIn:
+      properties:
+        scenarios:
+          items:
+            type: string
+          type: array
+          maxItems: 12
+          minItems: 1
+          title: Scenarios
+          default:
+          - A
+          - B
+        hours:
+          anyOf:
+          - type: number
+            maximum: 72.0
+            exclusiveMinimum: 0.0
+          - type: 'null'
+          title: Hours
+      type: object
+      title: ScenarioCompareIn
+    ScenarioSave:
+      properties:
+        name:
+          type: string
+          maxLength: 128
+          minLength: 2
+          title: Name
+        definition:
+          additionalProperties: true
+          type: object
+          title: Definition
+      type: object
+      required:
+      - name
+      - definition
+      title: ScenarioSave
+    SimCreate:
+      properties:
+        mva:
+          type: number
+          maximum: 120.0
+          minimum: 3.0
+          title: Mva
+          description: transformer rating MVA (capacity class)
+          default: 45.0
+        enclosure:
+          type: string
+          enum:
+          - open
+          - semi-closed
+          - closed
+          title: Enclosure
+          default: closed
+        scenario:
+          type: string
+          pattern: ^[A-L]$
+          title: Scenario
+          default: A
+        seed:
+          type: integer
+          maximum: 2147483648.0
+          minimum: 0.0
+          title: Seed
+          default: 42
+        overrides:
+          additionalProperties:
+            type: number
+          type: object
+          title: Overrides
+          description: geometry overrides, e.g. hearth_inner_diameter_m
+        run:
+          type: boolean
+          title: Run
+          description: start real-time-accelerated ticking
+          default: true
+        speed_steps:
+          type: integer
+          maximum: 60.0
+          minimum: 1.0
+          title: Speed Steps
+          description: simulation steps (60 s each) per 0.5 s tick
+          default: 2
+      type: object
+      title: SimCreate
+    SpeedIn:
+      properties:
+        running:
+          type: boolean
+          title: Running
+          default: true
+        speed_steps:
+          type: integer
+          maximum: 60.0
+          minimum: 1.0
+          title: Speed Steps
+          default: 2
+      type: object
+      title: SpeedIn
+    StepIn:
+      properties:
+        steps:
+          type: integer
+          maximum: 720.0
+          minimum: 1.0
+          title: Steps
+          description: number of 60 s steps (max 12 h per call)
+          default: 1
+      type: object
+      title: StepIn
+    TagMapIn:
+      properties:
+        mapping_csv:
+          type: string
+          title: Mapping Csv
+          description: CSV with header site_tag,twin_tag,scale,offset
+      type: object
+      required:
+      - mapping_csv
+      title: TagMapIn
+    TokenOut:
+      properties:
+        access_token:
+          type: string
+          title: Access Token
+        token_type:
+          type: string
+          title: Token Type
+          default: bearer
+        role:
+          type: string
+          title: Role
+        username:
+          type: string
+          title: Username
+      type: object
+      required:
+      - access_token
+      - role
+      - username
+      title: TokenOut
+    TrainIn:
+      properties:
+        target:
+          type: string
+          enum:
+          - sec_residual
+          - cr_rec_residual
+          - slag_cr2o3_residual
+          title: Target
+        kind:
+          type: string
+          enum:
+          - ridge
+          - gbr
+          title: Kind
+          default: ridge
+        seed:
+          type: integer
+          minimum: 0.0
+          title: Seed
+          default: 0
+      type: object
+      required:
+      - target
+      title: TrainIn
+    ValidationError:
+      properties:
+        loc:
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+          type: array
+          title: Location
+        msg:
+          type: string
+          title: Message
+        type:
+          type: string
+          title: Error Type
+        input:
+          title: Input
+        ctx:
+          type: object
+          title: Context
+      type: object
+      required:
+      - loc
+      - msg
+      - type
+      title: ValidationError
+    Version:
+      properties:
+        name:
+          type: string
+          title: Name
+        version:
+          type: string
+          title: Version
+        api:
+          type: string
+          title: Api
+          default: v1
+        synthetic_demo:
+          type: boolean
+          title: Synthetic Demo
+          default: true
+      type: object
+      required:
+      - name
+      - version
+      title: Version
+  securitySchemes:
+    HTTPBearer:
+      type: http
+      scheme: bearer

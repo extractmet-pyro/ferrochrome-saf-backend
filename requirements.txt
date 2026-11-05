@@ -1,0 +1,19 @@
+# Pinned runtime dependencies (Python 3.12/3.13). Lock refreshed 2026-10-29.
+fastapi==0.162.0
+starlette==1.7.0
+uvicorn==0.54.0
+websockets==17.3
+pydantic==2.13.5
+numpy==2.5.3
+scipy==1.18.1
+pandas==3.0.5
+pyarrow==26.0.0
+openpyxl==3.1.5
+scikit-learn==1.9.1
+SQLAlchemy==2.1.6
+alembic==1.20.1
+psycopg[binary]==3.3.6
+PyJWT==2.15.0
+python-multipart==0.0.32
+PyYAML==6.0.3
+reportlab==5.0.1
