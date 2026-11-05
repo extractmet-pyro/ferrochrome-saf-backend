@@ -1,0 +1,780 @@
+revision: 1
+created_at: '2026-10-29T00:00:00+00:00'
+synthetic: true
+params:
+  furnace_id:
+    name: furnace_id
+    symbol: '-'
+    description: Furnace identifier
+    units: '-'
+    lo: 0
+    hi: 0
+    value: Industry-X FCF-1
+    provenance: DEMO-ONLY
+    uncertainty: +/-20 % (example prior)
+    revision: 1
+    timestamp: '2026-10-29T00:00:00+00:00'
+    source_system: synthetic-config
+    reviewer: unreviewed
+    effective_date: '2026-10-29'
+    group: furnace
+  site_timezone:
+    name: site_timezone
+    symbol: '-'
+    description: Site timezone (UTC stored, local displayed)
+    units: '-'
+    lo: 0
+    hi: 0
+    value: Asia/Kolkata
+    provenance: DEMO-ONLY
+    uncertainty: +/-20 % (example prior)
+    revision: 1
+    timestamp: '2026-10-29T00:00:00+00:00'
+    source_system: synthetic-config
+    reviewer: unreviewed
+    effective_date: '2026-10-29'
+    group: furnace
+  furnace_type:
+    name: furnace_type
+    symbol: '-'
+    description: Electrical configuration
+    units: '-'
+    lo: 0
+    hi: 0
+    value: AC-3-electrode-SAF
+    provenance: DEMO-ONLY
+    uncertainty: +/-20 % (example prior)
+    revision: 1
+    timestamp: '2026-10-29T00:00:00+00:00'
+    source_system: synthetic-config
+    reviewer: unreviewed
+    effective_date: '2026-10-29'
+    group: furnace
+  enclosure:
+    name: enclosure
+    symbol: '-'
+    description: 'Roof enclosure: open | semi-closed | closed'
+    units: '-'
+    lo: 0
+    hi: 0
+    value: closed
+    provenance: DEMO-ONLY
+    uncertainty: +/-20 % (example prior)
+    revision: 1
+    timestamp: '2026-10-29T00:00:00+00:00'
+    source_system: synthetic-config
+    reviewer: unreviewed
+    effective_date: '2026-10-29'
+    group: furnace
+  transformer_mva:
+    name: transformer_mva
+    symbol: S_T
+    description: Furnace transformer rating
+    units: MVA
+    lo: 3
+    hi: 120
+    value: 45.0
+    provenance: DEMO-ONLY
+    uncertainty: +/-20 % (example prior)
+    revision: 1
+    timestamp: '2026-10-29T00:00:00+00:00'
+    source_system: synthetic-config
+    reviewer: unreviewed
+    effective_date: '2026-10-29'
+    group: electrical
+  nominal_power_mw:
+    name: nominal_power_mw
+    symbol: P_nom
+    description: Nominal active furnace power
+    units: MW
+    lo: 2
+    hi: 100
+    value: 36.0
+    provenance: DEMO-ONLY
+    uncertainty: +/-20 % (example prior)
+    revision: 1
+    timestamp: '2026-10-29T00:00:00+00:00'
+    source_system: synthetic-config
+    reviewer: unreviewed
+    effective_date: '2026-10-29'
+    group: electrical
+  nominal_line_voltage_v:
+    name: nominal_line_voltage_v
+    symbol: V_LL
+    description: Nominal secondary line voltage
+    units: V
+    lo: 60
+    hi: 600
+    value: 224.5
+    provenance: DEMO-ONLY
+    uncertainty: +/-20 % (example prior)
+    revision: 1
+    timestamp: '2026-10-29T00:00:00+00:00'
+    source_system: synthetic-config
+    reviewer: unreviewed
+    effective_date: '2026-10-29'
+    group: electrical
+  tap_count:
+    name: tap_count
+    symbol: N_tap
+    description: Number of on-load tap positions
+    units: '-'
+    lo: 3
+    hi: 40
+    value: 19
+    provenance: DEMO-ONLY
+    uncertainty: +/-20 % (example prior)
+    revision: 1
+    timestamp: '2026-10-29T00:00:00+00:00'
+    source_system: synthetic-config
+    reviewer: unreviewed
+    effective_date: '2026-10-29'
+    group: electrical
+  tap_step_v:
+    name: tap_step_v
+    symbol: dV_tap
+    description: Line-voltage step per tap
+    units: V
+    lo: 0.5
+    hi: 20
+    value: 4.94
+    provenance: DEMO-ONLY
+    uncertainty: +/-20 % (example prior)
+    revision: 1
+    timestamp: '2026-10-29T00:00:00+00:00'
+    source_system: synthetic-config
+    reviewer: unreviewed
+    effective_date: '2026-10-29'
+    group: electrical
+  tap_min_v:
+    name: tap_min_v
+    symbol: V_tap,min
+    description: Line voltage at tap 1
+    units: V
+    lo: 40
+    hi: 500
+    value: 175.1
+    provenance: DEMO-ONLY
+    uncertainty: +/-20 % (example prior)
+    revision: 1
+    timestamp: '2026-10-29T00:00:00+00:00'
+    source_system: synthetic-config
+    reviewer: unreviewed
+    effective_date: '2026-10-29'
+    group: electrical
+  tap_min_dwell_s:
+    name: tap_min_dwell_s
+    symbol: t_dwell
+    description: Minimum dwell between tap changes
+    units: s
+    lo: 30
+    hi: 3600
+    value: 300
+    provenance: DEMO-ONLY
+    uncertainty: +/-20 % (example prior)
+    revision: 1
+    timestamp: '2026-10-29T00:00:00+00:00'
+    source_system: synthetic-config
+    reviewer: unreviewed
+    effective_date: '2026-10-29'
+    group: electrical
+  max_phase_current_ka:
+    name: max_phase_current_ka
+    symbol: I_max
+    description: Electrode current limit (current-density based)
+    units: kA
+    lo: 10
+    hi: 250
+    value: 122.6
+    provenance: DEMO-ONLY
+    uncertainty: +/-20 % (example prior)
+    revision: 1
+    timestamp: '2026-10-29T00:00:00+00:00'
+    source_system: synthetic-config
+    reviewer: unreviewed
+    effective_date: '2026-10-29'
+    group: electrical
+  power_factor_design:
+    name: power_factor_design
+    symbol: PF_d
+    description: Design power factor at nominal load
+    units: '-'
+    lo: 0.5
+    hi: 0.98
+    value: 0.82
+    provenance: DEMO-ONLY
+    uncertainty: +/-20 % (example prior)
+    revision: 1
+    timestamp: '2026-10-29T00:00:00+00:00'
+    source_system: synthetic-config
+    reviewer: unreviewed
+    effective_date: '2026-10-29'
+    group: electrical
+  short_network_resistance_mohm:
+    name: short_network_resistance_mohm
+    symbol: R_net
+    description: Busbar/flexible/electrode-column resistance per phase
+    units: mOhm
+    lo: 0.01
+    hi: 0.5
+    value: 0.06
+    provenance: DEMO-ONLY
+    uncertainty: +/-20 % (example prior)
+    revision: 1
+    timestamp: '2026-10-29T00:00:00+00:00'
+    source_system: synthetic-config
+    reviewer: unreviewed
+    effective_date: '2026-10-29'
+    group: electrical
+  electrode_diameter_m:
+    name: electrode_diameter_m
+    symbol: D_e
+    description: Soderberg electrode diameter
+    units: m
+    lo: 0.5
+    hi: 2.2
+    value: 1.55
+    provenance: DEMO-ONLY
+    uncertainty: +/-20 % (example prior)
+    revision: 1
+    timestamp: '2026-10-29T00:00:00+00:00'
+    source_system: synthetic-config
+    reviewer: unreviewed
+    effective_date: '2026-10-29'
+    group: electrodes
+  pitch_circle_diameter_m:
+    name: pitch_circle_diameter_m
+    symbol: PCD
+    description: Electrode pitch-circle diameter
+    units: m
+    lo: 1
+    hi: 7
+    value: 4.03
+    provenance: DEMO-ONLY
+    uncertainty: +/-20 % (example prior)
+    revision: 1
+    timestamp: '2026-10-29T00:00:00+00:00'
+    source_system: synthetic-config
+    reviewer: unreviewed
+    effective_date: '2026-10-29'
+    group: electrodes
+  electrode_tip_depth_nominal_m:
+    name: electrode_tip_depth_nominal_m
+    symbol: h_tip
+    description: Nominal tip depth below burden surface
+    units: m
+    lo: 0.3
+    hi: 4.0
+    value: 2.81
+    provenance: DEMO-ONLY
+    uncertainty: +/-20 % (example prior)
+    revision: 1
+    timestamp: '2026-10-29T00:00:00+00:00'
+    source_system: synthetic-config
+    reviewer: unreviewed
+    effective_date: '2026-10-29'
+    group: electrodes
+  electrode_tip_depth_min_m:
+    name: electrode_tip_depth_min_m
+    symbol: h_tip,min
+    description: Minimum allowed tip depth (immersion)
+    units: m
+    lo: 0.1
+    hi: 3.0
+    value: 1.53
+    provenance: DEMO-ONLY
+    uncertainty: +/-20 % (example prior)
+    revision: 1
+    timestamp: '2026-10-29T00:00:00+00:00'
+    source_system: synthetic-config
+    reviewer: unreviewed
+    effective_date: '2026-10-29'
+    group: electrodes
+  electrode_tip_depth_max_m:
+    name: electrode_tip_depth_max_m
+    symbol: h_tip,max
+    description: Maximum tip depth (hearth clearance)
+    units: m
+    lo: 0.5
+    hi: 5.0
+    value: 4.08
+    provenance: DEMO-ONLY
+    uncertainty: +/-20 % (example prior)
+    revision: 1
+    timestamp: '2026-10-29T00:00:00+00:00'
+    source_system: synthetic-config
+    reviewer: unreviewed
+    effective_date: '2026-10-29'
+    group: electrodes
+  electrode_max_speed_m_per_min:
+    name: electrode_max_speed_m_per_min
+    symbol: v_e
+    description: Electrode hoist max speed
+    units: m/min
+    lo: 0.05
+    hi: 2.0
+    value: 0.4
+    provenance: DEMO-ONLY
+    uncertainty: +/-20 % (example prior)
+    revision: 1
+    timestamp: '2026-10-29T00:00:00+00:00'
+    source_system: synthetic-config
+    reviewer: unreviewed
+    effective_date: '2026-10-29'
+    group: electrodes
+  electrode_paste_kg_per_mwh:
+    name: electrode_paste_kg_per_mwh
+    symbol: e_paste
+    description: Electrode paste consumption
+    units: kg/MWh
+    lo: 1
+    hi: 10
+    value: 3.0
+    provenance: CALIBRATION-REQUIRED
+    uncertainty: +/-20 % (example prior)
+    revision: 1
+    timestamp: '2026-10-29T00:00:00+00:00'
+    source_system: synthetic-config
+    reviewer: unreviewed
+    effective_date: '2026-10-29'
+    group: electrodes
+  slip_length_mm:
+    name: slip_length_mm
+    symbol: l_slip
+    description: Electrode slip length per event
+    units: mm
+    lo: 5
+    hi: 40
+    value: 15
+    provenance: DEMO-ONLY
+    uncertainty: +/-20 % (example prior)
+    revision: 1
+    timestamp: '2026-10-29T00:00:00+00:00'
+    source_system: synthetic-config
+    reviewer: unreviewed
+    effective_date: '2026-10-29'
+    group: electrodes
+  hearth_inner_diameter_m:
+    name: hearth_inner_diameter_m
+    symbol: D_h
+    description: Hearth inner diameter
+    units: m
+    lo: 3
+    hi: 20
+    value: 10.44
+    provenance: DEMO-ONLY
+    uncertainty: +/-20 % (example prior)
+    revision: 1
+    timestamp: '2026-10-29T00:00:00+00:00'
+    source_system: synthetic-config
+    reviewer: unreviewed
+    effective_date: '2026-10-29'
+    group: geometry
+  burden_height_m:
+    name: burden_height_m
+    symbol: H_b
+    description: Burden column height above slag
+    units: m
+    lo: 1.5
+    hi: 9
+    value: 5.1
+    provenance: DEMO-ONLY
+    uncertainty: +/-20 % (example prior)
+    revision: 1
+    timestamp: '2026-10-29T00:00:00+00:00'
+    source_system: synthetic-config
+    reviewer: unreviewed
+    effective_date: '2026-10-29'
+    group: geometry
+  metal_bath_design_depth_m:
+    name: metal_bath_design_depth_m
+    symbol: H_m
+    description: Metal bath design depth (after tap heel)
+    units: m
+    lo: 0.2
+    hi: 1.5
+    value: 0.6
+    provenance: DEMO-ONLY
+    uncertainty: +/-20 % (example prior)
+    revision: 1
+    timestamp: '2026-10-29T00:00:00+00:00'
+    source_system: synthetic-config
+    reviewer: unreviewed
+    effective_date: '2026-10-29'
+    group: geometry
+  slag_layer_design_depth_m:
+    name: slag_layer_design_depth_m
+    symbol: H_s
+    description: Slag layer design depth
+    units: m
+    lo: 0.3
+    hi: 2.0
+    value: 0.9
+    provenance: DEMO-ONLY
+    uncertainty: +/-20 % (example prior)
+    revision: 1
+    timestamp: '2026-10-29T00:00:00+00:00'
+    source_system: synthetic-config
+    reviewer: unreviewed
+    effective_date: '2026-10-29'
+    group: geometry
+  freeboard_height_m:
+    name: freeboard_height_m
+    symbol: H_fb
+    description: Freeboard height under roof
+    units: m
+    lo: 0.5
+    hi: 4
+    value: 1.6
+    provenance: DEMO-ONLY
+    uncertainty: +/-20 % (example prior)
+    revision: 1
+    timestamp: '2026-10-29T00:00:00+00:00'
+    source_system: synthetic-config
+    reviewer: unreviewed
+    effective_date: '2026-10-29'
+    group: geometry
+  ambient_temperature_k:
+    name: ambient_temperature_k
+    symbol: T_amb
+    description: Ambient air temperature
+    units: K
+    lo: 263
+    hi: 323
+    value: 303.15
+    provenance: DEMO-ONLY
+    uncertainty: +/-20 % (example prior)
+    revision: 1
+    timestamp: '2026-10-29T00:00:00+00:00'
+    source_system: synthetic-config
+    reviewer: unreviewed
+    effective_date: '2026-10-29'
+    group: thermal
+  shell_emissivity:
+    name: shell_emissivity
+    symbol: eps_sh
+    description: Shell surface emissivity
+    units: '-'
+    lo: 0.3
+    hi: 0.95
+    value: 0.8
+    provenance: DEMO-ONLY
+    uncertainty: +/-20 % (example prior)
+    revision: 1
+    timestamp: '2026-10-29T00:00:00+00:00'
+    source_system: synthetic-config
+    reviewer: unreviewed
+    effective_date: '2026-10-29'
+    group: thermal
+  sidewall_spray_cooling:
+    name: sidewall_spray_cooling
+    symbol: '-'
+    description: Shell water-spray cooling on metal/slag band
+    units: '-'
+    lo: 0
+    hi: 0
+    value: true
+    provenance: DEMO-ONLY
+    uncertainty: +/-20 % (example prior)
+    revision: 1
+    timestamp: '2026-10-29T00:00:00+00:00'
+    source_system: synthetic-config
+    reviewer: unreviewed
+    effective_date: '2026-10-29'
+    group: thermal
+  spray_htc_w_m2k:
+    name: spray_htc_w_m2k
+    symbol: h_spray
+    description: Shell spray-cooling heat-transfer coefficient
+    units: W/m2/K
+    lo: 50
+    hi: 3000
+    value: 600
+    provenance: CALIBRATION-REQUIRED
+    uncertainty: +/-20 % (example prior)
+    revision: 1
+    timestamp: '2026-10-29T00:00:00+00:00'
+    source_system: synthetic-config
+    reviewer: unreviewed
+    effective_date: '2026-10-29'
+    group: thermal
+  hearth_air_htc_w_m2k:
+    name: hearth_air_htc_w_m2k
+    symbol: h_air,b
+    description: Under-hearth forced-air HTC
+    units: W/m2/K
+    lo: 5
+    hi: 200
+    value: 35
+    provenance: DEMO-ONLY
+    uncertainty: +/-20 % (example prior)
+    revision: 1
+    timestamp: '2026-10-29T00:00:00+00:00'
+    source_system: synthetic-config
+    reviewer: unreviewed
+    effective_date: '2026-10-29'
+    group: thermal
+  roof_water_htc_w_m2k:
+    name: roof_water_htc_w_m2k
+    symbol: h_roof
+    description: Roof panel cooling-water HTC
+    units: W/m2/K
+    lo: 100
+    hi: 5000
+    value: 1500
+    provenance: DEMO-ONLY
+    uncertainty: +/-20 % (example prior)
+    revision: 1
+    timestamp: '2026-10-29T00:00:00+00:00'
+    source_system: synthetic-config
+    reviewer: unreviewed
+    effective_date: '2026-10-29'
+    group: thermal
+  cooling_water_inlet_k:
+    name: cooling_water_inlet_k
+    symbol: T_cw,in
+    description: Cooling-water inlet temperature
+    units: K
+    lo: 280
+    hi: 320
+    value: 305.15
+    provenance: DEMO-ONLY
+    uncertainty: +/-20 % (example prior)
+    revision: 1
+    timestamp: '2026-10-29T00:00:00+00:00'
+    source_system: synthetic-config
+    reviewer: unreviewed
+    effective_date: '2026-10-29'
+    group: thermal
+  refractory_lining:
+    name: refractory_lining
+    symbol: '-'
+    description: Lining layup per wall region (material, thickness m)
+    units: '-'
+    lo: 0
+    hi: 0
+    value:
+      metal_band:
+      - - carbon_block
+        - 0.5
+      - - ramming_paste
+        - 0.06
+      - - fireclay
+        - 0.115
+      - - steel
+        - 0.032
+      slag_band:
+      - - magnesia_brick
+        - 0.46
+      - - high_alumina
+        - 0.23
+      - - insulating
+        - 0.115
+      - - steel
+        - 0.032
+      burden_band:
+      - - high_alumina
+        - 0.35
+      - - fireclay
+        - 0.23
+      - - steel
+        - 0.025
+      hearth:
+      - - carbon_block
+        - 1.0
+      - - magnesia_brick
+        - 0.46
+      - - fireclay
+        - 0.3
+      - - steel
+        - 0.04
+      roof:
+      - - castable
+        - 0.15
+      - - steel
+        - 0.02
+    provenance: DEMO-ONLY
+    uncertainty: +/-20 % (example prior)
+    revision: 1
+    timestamp: '2026-10-29T00:00:00+00:00'
+    source_system: synthetic-config
+    reviewer: unreviewed
+    effective_date: '2026-10-29'
+    group: refractory
+  tap_interval_h:
+    name: tap_interval_h
+    symbol: t_tap
+    description: Scheduled interval between taps
+    units: h
+    lo: 0.5
+    hi: 8
+    value: 2.0
+    provenance: DEMO-ONLY
+    uncertainty: +/-20 % (example prior)
+    revision: 1
+    timestamp: '2026-10-29T00:00:00+00:00'
+    source_system: synthetic-config
+    reviewer: unreviewed
+    effective_date: '2026-10-29'
+    group: tapping
+  tap_fraction_metal:
+    name: tap_fraction_metal
+    symbol: phi_m
+    description: Fraction of metal above heel removed per tap
+    units: '-'
+    lo: 0.3
+    hi: 1.0
+    value: 0.85
+    provenance: DEMO-ONLY
+    uncertainty: +/-20 % (example prior)
+    revision: 1
+    timestamp: '2026-10-29T00:00:00+00:00'
+    source_system: synthetic-config
+    reviewer: unreviewed
+    effective_date: '2026-10-29'
+    group: tapping
+  tap_fraction_slag:
+    name: tap_fraction_slag
+    symbol: phi_s
+    description: Fraction of slag above heel removed per tap
+    units: '-'
+    lo: 0.3
+    hi: 1.0
+    value: 0.8
+    provenance: DEMO-ONLY
+    uncertainty: +/-20 % (example prior)
+    revision: 1
+    timestamp: '2026-10-29T00:00:00+00:00'
+    source_system: synthetic-config
+    reviewer: unreviewed
+    effective_date: '2026-10-29'
+    group: tapping
+  lab_delay_min:
+    name: lab_delay_min
+    symbol: t_lab
+    description: Laboratory reporting delay (metal/slag assays)
+    units: min
+    lo: 5
+    hi: 240
+    value: 45
+    provenance: DEMO-ONLY
+    uncertainty: +/-20 % (example prior)
+    revision: 1
+    timestamp: '2026-10-29T00:00:00+00:00'
+    source_system: synthetic-config
+    reviewer: unreviewed
+    effective_date: '2026-10-29'
+    group: tapping
+  air_infiltration_nm3_per_nm3:
+    name: air_infiltration_nm3_per_nm3
+    symbol: lambda_air
+    description: Air ingress per Nm3 furnace gas (open/semi-closed)
+    units: Nm3/Nm3
+    lo: 0
+    hi: 60
+    value: 0.02
+    provenance: DEMO-ONLY
+    uncertainty: +/-20 % (example prior)
+    revision: 1
+    timestamp: '2026-10-29T00:00:00+00:00'
+    source_system: synthetic-config
+    reviewer: unreviewed
+    effective_date: '2026-10-29'
+    group: offgas
+  co_alarm_ppm:
+    name: co_alarm_ppm
+    symbol: '-'
+    description: Workplace CO advisory threshold at roof seal (example)
+    units: ppm
+    lo: 10
+    hi: 500
+    value: 50
+    provenance: DEMO-ONLY
+    uncertainty: +/-20 % (example prior)
+    revision: 1
+    timestamp: '2026-10-29T00:00:00+00:00'
+    source_system: synthetic-config
+    reviewer: unreviewed
+    effective_date: '2026-10-29'
+    group: offgas
+  analyzer_lag_s:
+    name: analyzer_lag_s
+    symbol: tau_an
+    description: Gas analyzer first-order lag
+    units: s
+    lo: 5
+    hi: 600
+    value: 90
+    provenance: DEMO-ONLY
+    uncertainty: +/-20 % (example prior)
+    revision: 1
+    timestamp: '2026-10-29T00:00:00+00:00'
+    source_system: synthetic-config
+    reviewer: unreviewed
+    effective_date: '2026-10-29'
+    group: offgas
+  target_cr_wt_pct:
+    name: target_cr_wt_pct
+    symbol: '-'
+    description: Product Cr target (min)
+    units: wt%
+    lo: 45
+    hi: 75
+    value: 52.0
+    provenance: DEMO-ONLY
+    uncertainty: +/-20 % (example prior)
+    revision: 1
+    timestamp: '2026-10-29T00:00:00+00:00'
+    source_system: synthetic-config
+    reviewer: unreviewed
+    effective_date: '2026-10-29'
+    group: quality
+  max_si_wt_pct:
+    name: max_si_wt_pct
+    symbol: '-'
+    description: Product Si maximum
+    units: wt%
+    lo: 0.5
+    hi: 8
+    value: 4.0
+    provenance: DEMO-ONLY
+    uncertainty: +/-20 % (example prior)
+    revision: 1
+    timestamp: '2026-10-29T00:00:00+00:00'
+    source_system: synthetic-config
+    reviewer: unreviewed
+    effective_date: '2026-10-29'
+    group: quality
+  max_c_wt_pct:
+    name: max_c_wt_pct
+    symbol: '-'
+    description: Product C maximum
+    units: wt%
+    lo: 4
+    hi: 10
+    value: 8.5
+    provenance: DEMO-ONLY
+    uncertainty: +/-20 % (example prior)
+    revision: 1
+    timestamp: '2026-10-29T00:00:00+00:00'
+    source_system: synthetic-config
+    reviewer: unreviewed
+    effective_date: '2026-10-29'
+    group: quality
+  max_p_wt_pct:
+    name: max_p_wt_pct
+    symbol: '-'
+    description: Product P maximum
+    units: wt%
+    lo: 0.01
+    hi: 0.1
+    value: 0.035
+    provenance: DEMO-ONLY
+    uncertainty: +/-20 % (example prior)
+    revision: 1
+    timestamp: '2026-10-29T00:00:00+00:00'
+    source_system: synthetic-config
+    reviewer: unreviewed
+    effective_date: '2026-10-29'
+    group: quality
+geometry_derivation: app.domain.plant_config.derive_geometry (rules of thumb, CALIBRATION-REQUIRED)

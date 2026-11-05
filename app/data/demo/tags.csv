@@ -1,0 +1,62 @@
+tag,description,units,lo,hi,sigma,rate_s,source,path,delay_s,permission,outlier_policy,fallback,calibration
+EL_P_TOTAL,Total active power (transformer secondary),MW,0,120,0.05,1,DCS,power_mw,0.0,read,"reject >5 sigma, hold last good","hold last good, flag STALE after 3 samples",synthetic - none
+EL_P_FURNACE,Active power into furnace (calc.),MW,0,120,0.05,1,CALC,furnace_power_mw,0.0,read,"reject >5 sigma, hold last good","hold last good, flag STALE after 3 samples",synthetic - none
+EL_PF,Power factor,-,0,1,0.003,1,DCS,electrical.power_factor,0.0,read,"reject >5 sigma, hold last good","hold last good, flag STALE after 3 samples",synthetic - none
+EL_S,Apparent power,MVA,0,150,0.08,1,DCS,electrical.s_VA,0.0,read,"reject >5 sigma, hold last good","hold last good, flag STALE after 3 samples",scaled 1e-6
+EL_Q,Reactive power,Mvar,0,120,0.08,1,DCS,electrical.q_total_var,0.0,read,"reject >5 sigma, hold last good","hold last good, flag STALE after 3 samples",scaled 1e-6
+EL_TAP,Transformer tap position,-,1,40,0.0,1,PLC,electrical.tap,0.0,read,"reject >5 sigma, hold last good","hold last good, flag STALE after 3 samples",synthetic - none
+EL_VLL,Secondary line voltage at tap,V,0,600,0.5,1,DCS,electrical.v_line_V,0.0,read,"reject >5 sigma, hold last good","hold last good, flag STALE after 3 samples",synthetic - none
+EL_UNBAL,Current unbalance,%,0,100,0.2,1,CALC,electrical.current_unbalance_pct,0.0,read,"reject >5 sigma, hold last good","hold last good, flag STALE after 3 samples",synthetic - none
+EL_NEG_SEQ,Negative-sequence current,%,0,100,0.2,1,CALC,electrical.negative_sequence_pct,0.0,read,"reject >5 sigma, hold last good","hold last good, flag STALE after 3 samples",synthetic - none
+EL_NSHIFT,Furnace star-point shift voltage,V,0,200,0.5,1,CALC,electrical.neutral_shift_V,0.0,read,"reject >5 sigma, hold last good","hold last good, flag STALE after 3 samples",synthetic - none
+EL_I1,Electrode 1 RMS current,kA,0,250,0.3,1,DCS,electrical.i_phase_A.0,0.0,read,"reject >5 sigma, hold last good","hold last good, flag STALE after 3 samples",scaled 1e-3
+EL_V1,Electrode 1 voltage to hearth,V,0,400,0.6,1,DCS,electrical.v_phase_V.0,0.0,read,"reject >5 sigma, hold last good","hold last good, flag STALE after 3 samples",synthetic - none
+EL_R1,Electrode 1 load resistance,mOhm,0,10,0.01,1,CALC,electrical.r_load_mohm.0,0.0,read,"reject >5 sigma, hold last good","hold last good, flag STALE after 3 samples",synthetic - none
+EL_P1,Electrode 1 active power,MW,0,50,0.05,1,DCS,electrical.p_load_W.0,0.0,read,"reject >5 sigma, hold last good","hold last good, flag STALE after 3 samples",scaled 1e-6
+ELD_POS1,Electrode 1 holder position,m,0,2.4,0.005,1,PLC,electrical.holder_m.0,0.0,read,"reject >5 sigma, hold last good","hold last good, flag STALE after 3 samples",synthetic - none
+ELD_TIP1,Electrode 1 estimated tip depth,m,0,6,0.05,10,CALC,electrical.tip_depth_m.0,0.0,read,"reject >5 sigma, hold last good","hold last good, flag STALE after 3 samples",synthetic - none
+ELD_SLIP1,Electrode 1 slip counter,-,0,1000000.0,0.0,10,PLC,electrical.slips.0,0.0,read,"reject >5 sigma, hold last good","hold last good, flag STALE after 3 samples",synthetic - none
+EL_I2,Electrode 2 RMS current,kA,0,250,0.3,1,DCS,electrical.i_phase_A.1,0.0,read,"reject >5 sigma, hold last good","hold last good, flag STALE after 3 samples",scaled 1e-3
+EL_V2,Electrode 2 voltage to hearth,V,0,400,0.6,1,DCS,electrical.v_phase_V.1,0.0,read,"reject >5 sigma, hold last good","hold last good, flag STALE after 3 samples",synthetic - none
+EL_R2,Electrode 2 load resistance,mOhm,0,10,0.01,1,CALC,electrical.r_load_mohm.1,0.0,read,"reject >5 sigma, hold last good","hold last good, flag STALE after 3 samples",synthetic - none
+EL_P2,Electrode 2 active power,MW,0,50,0.05,1,DCS,electrical.p_load_W.1,0.0,read,"reject >5 sigma, hold last good","hold last good, flag STALE after 3 samples",scaled 1e-6
+ELD_POS2,Electrode 2 holder position,m,0,2.4,0.005,1,PLC,electrical.holder_m.1,0.0,read,"reject >5 sigma, hold last good","hold last good, flag STALE after 3 samples",synthetic - none
+ELD_TIP2,Electrode 2 estimated tip depth,m,0,6,0.05,10,CALC,electrical.tip_depth_m.1,0.0,read,"reject >5 sigma, hold last good","hold last good, flag STALE after 3 samples",synthetic - none
+ELD_SLIP2,Electrode 2 slip counter,-,0,1000000.0,0.0,10,PLC,electrical.slips.1,0.0,read,"reject >5 sigma, hold last good","hold last good, flag STALE after 3 samples",synthetic - none
+EL_I3,Electrode 3 RMS current,kA,0,250,0.3,1,DCS,electrical.i_phase_A.2,0.0,read,"reject >5 sigma, hold last good","hold last good, flag STALE after 3 samples",scaled 1e-3
+EL_V3,Electrode 3 voltage to hearth,V,0,400,0.6,1,DCS,electrical.v_phase_V.2,0.0,read,"reject >5 sigma, hold last good","hold last good, flag STALE after 3 samples",synthetic - none
+EL_R3,Electrode 3 load resistance,mOhm,0,10,0.01,1,CALC,electrical.r_load_mohm.2,0.0,read,"reject >5 sigma, hold last good","hold last good, flag STALE after 3 samples",synthetic - none
+EL_P3,Electrode 3 active power,MW,0,50,0.05,1,DCS,electrical.p_load_W.2,0.0,read,"reject >5 sigma, hold last good","hold last good, flag STALE after 3 samples",scaled 1e-6
+ELD_POS3,Electrode 3 holder position,m,0,2.4,0.005,1,PLC,electrical.holder_m.2,0.0,read,"reject >5 sigma, hold last good","hold last good, flag STALE after 3 samples",synthetic - none
+ELD_TIP3,Electrode 3 estimated tip depth,m,0,6,0.05,10,CALC,electrical.tip_depth_m.2,0.0,read,"reject >5 sigma, hold last good","hold last good, flag STALE after 3 samples",synthetic - none
+ELD_SLIP3,Electrode 3 slip counter,-,0,1000000.0,0.0,10,PLC,electrical.slips.2,0.0,read,"reject >5 sigma, hold last good","hold last good, flag STALE after 3 samples",synthetic - none
+TC_OFFGAS,Off-gas temperature (duct),K,273,1800,4.0,5,DCS,offgas_T_K,0.0,read,"reject >5 sigma, hold last good","hold last good, flag STALE after 3 samples",synthetic - none
+TC_SHELL_METAL,"Shell thermocouple, metal band",K,273,900,1.5,10,DCS,walls.metal_band.shell_T_K,0.0,read,"reject >5 sigma, hold last good","hold last good, flag STALE after 3 samples",synthetic - none
+TC_SHELL_SLAG,"Shell thermocouple, slag band",K,273,900,1.5,10,DCS,walls.slag_band.shell_T_K,0.0,read,"reject >5 sigma, hold last good","hold last good, flag STALE after 3 samples",synthetic - none
+TC_SHELL_BURDEN,"Shell thermocouple, burden band",K,273,900,1.5,10,DCS,walls.burden_lower.shell_T_K,0.0,read,"reject >5 sigma, hold last good","hold last good, flag STALE after 3 samples",synthetic - none
+TC_HEARTH_BOTTOM,Hearth bottom plate thermocouple,K,273,900,1.5,10,DCS,walls.hearth.shell_T_K,0.0,read,"reject >5 sigma, hold last good","hold last good, flag STALE after 3 samples",synthetic - none
+TC_HEARTH_HOTFACE,Hearth carbon hot-face (embedded TC est.),K,273,2500,6.0,10,DCS,walls.hearth.hot_face_T_K,0.0,read,"reject >5 sigma, hold last good","hold last good, flag STALE after 3 samples",synthetic - none
+TC_ROOF,Roof panel temperature,K,273,900,1.5,10,DCS,walls.roof.shell_T_K,0.0,read,"reject >5 sigma, hold last good","hold last good, flag STALE after 3 samples",synthetic - none
+CW_HEAT,Cooling water heat removal,MW,0,20,0.02,10,CALC,cooling_water_heat_MW,0.0,read,"reject >5 sigma, hold last good","hold last good, flag STALE after 3 samples",synthetic - none
+CW_DT,Cooling water temperature rise,K,0,40,0.1,10,DCS,cooling_water_dT_K,0.0,read,"reject >5 sigma, hold last good","hold last good, flag STALE after 3 samples",synthetic - none
+GAS_FLOW_DRY,"Off-gas flow (dry, Nm3/h)",Nm3/h,0,200000.0,150,5,DCS,dry_offgas_nm3_per_h,0.0,read,"reject >5 sigma, hold last good","hold last good, flag STALE after 3 samples",synthetic - none
+GAS_CO,"Off-gas CO (dry, analyzer)",vol%,0,100,0.4,5,ANALYZER,analyzer_dry_vol_pct.CO,90,read,"reject >5 sigma, hold last good","hold last good, flag STALE after 3 samples",synthetic - none
+GAS_CO2,"Off-gas CO2 (dry, analyzer)",vol%,0,100,0.3,5,ANALYZER,analyzer_dry_vol_pct.CO2,90,read,"reject >5 sigma, hold last good","hold last good, flag STALE after 3 samples",synthetic - none
+GAS_H2,"Off-gas H2 (dry, analyzer)",vol%,0,100,0.3,5,ANALYZER,analyzer_dry_vol_pct.H2,90,read,"reject >5 sigma, hold last good","hold last good, flag STALE after 3 samples",synthetic - none
+GAS_O2,"Off-gas O2 (dry, analyzer)",vol%,0,25,0.05,5,ANALYZER,offgas_dry_vol_pct.O2,60,read,"reject >5 sigma, hold last good","hold last good, flag STALE after 3 samples",synthetic - none
+GAS_N2,"Off-gas N2 (dry, by difference)",vol%,0,100,0.5,5,CALC,offgas_dry_vol_pct.N2,0.0,read,"reject >5 sigma, hold last good","hold last good, flag STALE after 3 samples",synthetic - none
+GAS_CH4,Off-gas CH4 (dry),vol%,0,20,0.05,5,ANALYZER,offgas_dry_vol_pct.CH4,90,read,"reject >5 sigma, hold last good","hold last good, flag STALE after 3 samples",synthetic - none
+DUST_LOAD,Dust loading to gas cleaning,kg/h,0,5000,5,60,CALC,dust_kg_per_h,0.0,read,"reject >5 sigma, hold last good","hold last good, flag STALE after 3 samples",synthetic - none
+BURDEN_DP,Burden pressure-drop proxy,kPa,0,50,0.05,5,CALC,burden_dp_kpa,0.0,read,"reject >5 sigma, hold last good","hold last good, flag STALE after 3 samples",synthetic - none
+FEED_RATE,Charge feed rate (weigh-feeders),t/h,0,200,0.2,10,PLC,feed_t_per_h,0.0,read,"reject >5 sigma, hold last good","hold last good, flag STALE after 3 samples",synthetic - none
+BURDEN_UPPER,Upper burden inventory (level-derived),t,0,2000,2.0,30,CALC,burden_upper_t,0.0,read,"reject >5 sigma, hold last good","hold last good, flag STALE after 3 samples",synthetic - none
+METAL_TAP_T,"Metal tap temperature (pyrometer, at tap)",K,1500,2300,8.0,3600,LAB,last_tap.metal_T_K,0.0,read,"reject >5 sigma, hold last good","hold last good, flag STALE after 3 samples",synthetic - none
+METAL_TAP_MASS,Tapped metal mass (ladle weigh),t,0,200,0.3,3600,PLC,last_tap.metal_t,0.0,read,"reject >5 sigma, hold last good","hold last good, flag STALE after 3 samples",synthetic - none
+SLAG_TAP_MASS,Tapped slag mass (pot count est.),t,0,400,1.0,3600,PLC,last_tap.slag_t,0.0,read,"reject >5 sigma, hold last good","hold last good, flag STALE after 3 samples",synthetic - none
+LAB_METAL_CR,Lab metal Cr,wt%,0,100,0.25,7200,LAB,latest_lab.metal.Cr,2700,read,"reject >5 sigma, hold last good","hold last good, flag STALE after 3 samples",synthetic - none
+LAB_METAL_C,Lab metal C,wt%,0,12,0.05,7200,LAB,latest_lab.metal.C,2700,read,"reject >5 sigma, hold last good","hold last good, flag STALE after 3 samples",synthetic - none
+LAB_METAL_SI,Lab metal Si,wt%,0,15,0.05,7200,LAB,latest_lab.metal.Si,2700,read,"reject >5 sigma, hold last good","hold last good, flag STALE after 3 samples",synthetic - none
+LAB_SLAG_CR2O3,"Lab slag Cr2O3 (total, XRF)",wt%,0,40,0.2,7200,LAB,latest_lab.slag.Cr2O3,2700,read,"reject >5 sigma, hold last good","hold last good, flag STALE after 3 samples",synthetic - none
+LAB_SLAG_SIO2,Lab slag SiO2,wt%,0,60,0.2,7200,LAB,latest_lab.slag.SiO2,2700,read,"reject >5 sigma, hold last good","hold last good, flag STALE after 3 samples",synthetic - none
+LAB_SLAG_MGO,Lab slag MgO,wt%,0,60,0.2,7200,LAB,latest_lab.slag.MgO,2700,read,"reject >5 sigma, hold last good","hold last good, flag STALE after 3 samples",synthetic - none
+LAB_SLAG_AL2O3,Lab slag Al2O3,wt%,0,60,0.2,7200,LAB,latest_lab.slag.Al2O3,2700,read,"reject >5 sigma, hold last good","hold last good, flag STALE after 3 samples",synthetic - none

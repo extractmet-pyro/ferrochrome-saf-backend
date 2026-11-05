@@ -1,0 +1,12 @@
+{
+ "ore_blend": {
+  "ORE_A_LUMPY": 0.55,
+  "ORE_B_PELLET": 0.45
+ },
+ "COKE_MET": 163.0,
+ "COAL_LA": 40.0,
+ "QUARTZITE": 85.0,
+ "LIMESTONE": 0.0,
+ "DOLOMITE": 0.0,
+ "METAL_RECYCLE": 0.0
+}

@@ -1,0 +1,12 @@
+key,name,category,moisture_wet_wt_pct,price_inr_per_t,d50_mm,fines_pct,bulk_density_t_m3,prereduction_fe,prereduction_cr,Al2O3_dry_wt_pct,C_dry_wt_pct,C_met_dry_wt_pct,CaCO3_dry_wt_pct,CaO_dry_wt_pct,Cr2O3_dry_wt_pct,Cr_met_dry_wt_pct,Fe2O3_dry_wt_pct,FeO_dry_wt_pct,Fe_met_dry_wt_pct,LOI_dry_wt_pct,MgCO3_dry_wt_pct,MgO_dry_wt_pct,MnO_dry_wt_pct,P2O5_dry_wt_pct,S_dry_wt_pct,SiO2_dry_wt_pct,Si_met_dry_wt_pct,TiO2_dry_wt_pct,VOL_dry_wt_pct
+ORE_A_LUMPY,"Chromite lumpy ore A (synthetic, Cr/Fe~2.7)",ore,4.0,9500,40,8,2.4,0.0,0.0,10.5,0.0,0.0,0.0,0.6,46.0,0.0,6.0,9.5,0.0,3.49,0.0,11.2,0.3,0.01,0.0,12.0,0.0,0.4,0.0
+ORE_B_PELLET,Sintered chromite concentrate pellets B (synthetic),ore,0.5,13500,12,3,2.3,0.0,0.0,12.99,0.0,0.0,0.0,0.5,50.0,0.0,4.0,12.5,0.0,0.0,0.0,11.2,0.3,0.01,0.0,8.0,0.0,0.5,0.0
+ORE_C_FRIABLE,"Low-grade friable chromite C (synthetic, high gangue)",ore,7.0,6500,8,25,2.1,0.0,0.0,9.0,0.0,0.0,0.0,1.0,38.0,0.0,9.0,10.0,0.0,4.38,0.0,12.0,0.3,0.02,0.0,16.0,0.0,0.3,0.0
+COKE_MET,Metallurgical nut coke (synthetic),reductant,6.0,32000,15,6,0.5,0.0,0.0,3.25,84.0,0.0,0.0,0.65,0.0,0.0,1.3,0.0,0.0,1.7,0.0,0.26,0.0,0.06,0.6,6.5,0.0,0.08,1.6
+COAL_LA,Low-ash coal / anthracite (synthetic),reductant,8.0,18000,20,10,0.75,0.0,0.0,3.0,76.0,0.0,0.0,0.6,0.0,0.0,1.0,0.0,0.0,2.07,0.0,0.3,0.0,0.03,0.5,6.0,0.0,0.0,10.5
+COKE_LOWQ,"High-ash, lower fixed-C coke (synthetic)",reductant,9.0,24000,10,14,0.5,0.0,0.0,6.0,75.0,0.0,0.0,1.0,0.0,0.0,1.8,0.0,0.0,1.8,0.0,0.4,0.0,0.09,0.8,11.0,0.0,0.11,2.0
+QUARTZITE,Quartzite flux (synthetic),flux,2.0,1800,30,3,1.5,0.0,0.0,1.4,0.0,0.0,0.0,0.3,0.0,0.0,0.8,0.0,0.0,0.3,0.0,0.2,0.0,0.0,0.0,97.0,0.0,0.0,0.0
+LIMESTONE,Limestone (synthetic),flux,2.0,1500,30,4,1.5,0.0,0.0,0.8,0.0,0.0,94.0,0.0,0.0,0.0,0.4,0.0,0.0,0.3,2.5,0.0,0.0,0.0,0.0,2.0,0.0,0.0,0.0
+DOLOMITE,Dolomite (synthetic),flux,2.0,1700,30,4,1.6,0.0,0.0,0.8,0.0,0.0,54.0,0.0,0.0,0.0,0.7,0.0,0.0,0.0,42.0,0.0,0.0,0.0,0.0,2.5,0.0,0.0,0.0
+METAL_RECYCLE,Recovered FeCr metal from slag jigging (synthetic),recycle,1.0,60000,10,5,3.5,0.0,0.0,0.5,0.0,6.8,0.0,0.0,0.0,52.0,0.0,0.0,36.0,0.0,0.0,0.7,0.0,0.0,0.0,1.5,2.5,0.0,0.0
+ORE_B_PREREDUCED,"Sintered chromite concentrate pellets B (synthetic) (pre-reduced Fe 80%, Cr 45%)",ore,0.0,16875.0,12,4,2.4,0.8,0.45,14.480670077482287,0.0,0.0,0.0,0.557377601134807,30.655768062414396,17.16117190193097,0.8918041618156911,2.786888005674035,11.160068592132838,0.0,0.0,12.485258265419679,0.3344265606808842,0.011147552022696142,0.0,8.918041618156913,0.0,0.557377601134807,0.0
